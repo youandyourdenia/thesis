@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Math Wizard Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-900 text-white flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-1/5 bg-gray-800 p-6">
+        <div class="flex items-center mb-8">
+            <img src="https://storage.googleapis.com/a1aa/image/JtjKOOpNLXpdcEUZDuYHWZZWGz-_95sB-VDzfzuXQH8.jpg" alt="Math Wizard Logo" class="w-12 h-12 mr-3">
+            <h1 class="text-2xl font-bold">Math Wizard</h1>
+        </div>
+        <nav>
+            <ul class="space-y-4">
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-gamepad mr-3"></i> Play</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-home mr-3"></i> Home</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-book mr-3"></i> My Learning Path</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-folder-open mr-3"></i> Collections</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-trophy mr-3"></i> Artifacts</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-chart-line mr-3"></i> Leaderboards</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-cog mr-3"></i> Settings</a></li>
+                <li><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-sign-out-alt mr-3"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="w-4/5 p-6">
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Profile Card -->
+            <div class="bg-gray-800 p-5 rounded-lg">
+                <div class="flex items-center mb-4">
+                    <img src="https://storage.googleapis.com/a1aa/image/mcOjghpq7aDndGxCellpfftdgedGpDZiy0wOYLeQd9w.jpg" alt="User Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h2 class="text-xl font-bold">Juan, Dela Cruz</h2>
+                        <p>Rank: Wizard</p>
+                        <p>Points: 1,234</p>
+                    </div>
+                </div>
+                <a href="#" class="text-blue-400 hover:underline">Edit profile</a>
+            </div>
+
+            <!-- Date & Time -->
+            <div class="bg-gray-800 p-5 rounded-lg text-center">
+                <h2 class="text-xl font-bold mb-2">Date & Time</h2>
+                <p>March 03, 2025, Friday</p>
+                <p>11:03 PM</p>
+            </div>
+
+            <!-- Leaderboards -->
+            <div class="bg-gray-800 p-5 rounded-lg">
+                <div class="flex justify-between mb-3">
+                    <h2 class="text-xl font-bold">Leaderboards</h2>
+                    <a href="#" class="text-blue-400 hover:underline">See more</a>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span>Karlo Abian</span><span>6,759 points</span></li>
+                    <li class="flex justify-between"><span>Rap Chan</span><span>6,357 points</span></li>
+                    <li class="flex justify-between"><span>Arnold Montanez</span><span>5,253 points</span></li>
+                    <li class="flex justify-between"><span>Gerry Sanchez</span><span>5,129 points</span></li>
+                    <li class="flex justify-between"><span>Jeff Beckman</span><span>3,245 points</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Learning Path & Achievements -->
+        <div class="grid grid-cols-3 gap-6 mt-6">
+            <!-- Learning Path -->
+            <div class="col-span-2 bg-gray-800 p-5 rounded-lg">
+                <div class="flex justify-between mb-4">
+                    <h2 class="text-xl font-bold">Current Learning Path</h2>
+                    <a href="#" class="text-blue-400 hover:underline">See more</a>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between"><span>Addition</span><a href="#" class="text-blue-400 hover:underline">Continue</a></div>
+                        <div class="w-full bg-gray-700 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full w-4/5"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between"><span>Subtraction</span><a href="#" class="text-blue-400 hover:underline">Continue</a></div>
+                        <div class="w-full bg-gray-700 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full w-3/5"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between"><span>Multiplication</span><a href="#" class="text-blue-400 hover:underline">Continue</a></div>
+                        <div class="w-full bg-gray-700 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full w-1/5"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="bg-gray-800 p-5 rounded-lg">
+                <div class="flex justify-between mb-4">
+                    <h2 class="text-xl font-bold">Achievements</h2>
+                    <a href="#" class="text-blue-400 hover:underline">See more</a>
+                </div>
+                <div class="grid gap-4">
+                    <div class="text-center">
+                        <img src="https://storage.googleapis.com/a1aa/image/k5h73uf_ftXDyzDMB8hudtotOBiEq8AmnQxzXnf1rGY.jpg" class="mx-auto mb-2 w-12 h-12">
+                        <p>Welcome Wizard</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://storage.googleapis.com/a1aa/image/r6w1y9ZflRAzMou8dd2VgQ9lATGAxrXtZhfAjovagF4.jpg" class="mx-auto mb-2 w-12 h-12">
+                        <p>Division Champion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
