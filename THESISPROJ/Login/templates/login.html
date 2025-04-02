@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Sign in</h2>
+            <form action="{{ url_for('login') }}" method="POST">
+                <!-- Username field -->
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="USERNAME" required>
+                </div>
+
+                <!-- Password field -->
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="PASSWORD" required>
+                </div>
+
+                <!-- Stay signed in checkbox -->
+                <div class="stay-signed-in">
+                    <input type="checkbox" id="stay-signed-in" name="stay-signed-in">
+                    <label for="stay-signed-in">Stay signed in</label>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="btn btn-primary">Login</button>
+
+                <!-- Forgot Password Link -->
+                <a href="#" class="forgot-password">Forgot Password?</a><br><br>
+            </form>
+
+            <hr>
+
+            <!-- Create Account Section -->
+            <p class="create-account">Don't have an account? <a href="{{ url_for('register') }}">Create Account</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <style>
+        /* Custom CSS to remove margin and padding */
+        .card.mb-3 {
+            margin-top: 0 !important; /* Remove top margin */
+            padding-top: 0 !important; /* Remove padding from top */
+        }
+
+        /* Optional: Adjust space between cards more precisely */
+        .row.mb-4 {
+            margin-bottom: 15px !important; /* Adjust space between rows */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 col-lg-2 d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="#">🏠 Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">📚 My Learning Path</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">🏆 Leaderboards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">⚙️ Settings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">🚪 Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-10 ms-sm-auto px-4">
+                <!-- Row 1: Profile & Date/Time -->
+                <div class="row mb-4">
+                    <!-- Card 1: User Profile -->
+                    <div class="col-md-4">
+                        <div class="card mb-3 p-3">
+                            <h4>Welcome, Juan Dela Cruz</h4>
+                            <p>Rank: Wizard | Points: 1,234</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Real-time Date & Time -->
+                    <div class="col-md-4">
+                        <div class="card mb-3 p-3">
+                            <h4>📅 Current Date & Time</h4>
+                            <p id="datetime"></p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Leaderboards -->
+                    <div class="col-md-4">
+                        <div class="card mb-3 p-3">
+                            <h4>🏆 Leaderboards</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item">🥇 Karlo Abian - 6,759 points</li>
+                                <li class="list-group-item">🥈 Rap Chan - 6,357 points</li>
+                                <li class="list-group-item">🥉 Arnold Montanez - 5,253 points</li>
+                                <li class="list-group-item">🏅 Gerry Sanchez - 5,129 points</li>
+                                <li class="list-group-item">🎖️ Jeff Beckman - 3,245 points</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Learning Path Progress & Badges -->
+                <div class="row mb-4">
+                    <!-- Card 1: Learning Path Progress -->
+                    <div class="col-md-8">
+                        <div class="card mb-3 p-3">
+                            <h4>📚 Current Learning Path</h4>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 80%">Addition (4/5)</div>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" style="width: 60%">Subtraction (3/5)</div>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 20%">Multiplication (1/5)</div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" style="width: 40%">Division (2/5)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Badges -->
+                    <div class="col-md-4">
+                        <div class="card mb-3 p-3">
+                            <h4>🏅 Badges</h4>
+                            <p>Here are some cool badges you can earn:</p>
+                            <ul class="list-unstyled">
+                                <li><span class="badge bg-primary">🔰 Newbie</span> - First login</li>
+                                <li><span class="badge bg-success">🎉 Achiever</span> - Completed your first challenge</li>
+                                <li><span class="badge bg-info">🚀 Speedster</span> - Finished a challenge in under 5 minutes</li>
+                                <li><span class="badge bg-warning">🔥 Hotshot</span> - Top 5 player of the week</li>
+                                <li><span class="badge bg-danger">⚡ Power Player</span> - Completed 50+ lessons</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Achievements -->
+                <div class="row mb-4">
+                    <!-- Card 1: Achievements -->
+                    <div class="col-md-8">
+                        <div class="card mb-3 p-3">
+                            <h4>🏅 Achievements</h4>
+                            <p>🎖️ <strong>Welcome Wizard</strong> - Completed creating an account</p>
+                            <p>🎖️ <strong>Division Champion</strong> - Completed 3 division challenges</p>
+                            <p>🎖️ <strong>Math Marathoner</strong> - Completed 10 lessons in a week</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            let now = new Date();
+            let formattedDateTime = now.toLocaleString();
+            document.getElementById("datetime").innerText = formattedDateTime;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
