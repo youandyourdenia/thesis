@@ -1,0 +1,124 @@
+/* General Body Background */
+body {
+    background-color: #161B2C; /* Background color */
+    color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    background-color: #1E273E; /* Updated Sidebar color */
+    height: 100vh;
+    padding: 1rem;
+}
+
+.sidebar .text-xl {
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: #9ca3af;
+}
+
+/* Main Content */
+.main-content {
+    width: 90%;
+    padding: 1rem;
+}
+
+/* Adjust gap between Date & Time and Leaderboards cards */
+.datetime-card {
+    margin-bottom: 50px; /* Increased gap */
+}
+
+.learning-path-card, .badges-card {
+    margin-bottom: 20px;
+}
+
+/* Card Background Color Change */
+.profile-card, .datetime-card, .learning-path-card, .badges-card, .leaderboards-card, .achievements-card {
+    background-color: #1E273E; /* Updated card background color */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Profile Card Image */
+.profile-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Badge Images */
+.badge-img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 8px;
+    background-color: #4b5563;
+    border-radius: 9999px;
+}
+
+.progress-bar > div {
+    height: 100%;
+    background-color: #10b981;
+    border-radius: 9999px;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    width: 50%;
+    padding: 1rem;
+}
+
+/* Achievement Card Styling */
+.achievement-card {
+    background-color: #374151;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.achievement-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+/* Flex and Spacing Adjustments */
+.flex {
+    display: flex;
+}
+
+.flex > * {
+    margin-right: 0rem; /* Extremely small margin between flex items */
+}
+
+.flex > *:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+.flex.justify-between {
+    justify-content: space-between;
+}
+
+.flex.items-center {
+    align-items: center;
+}
