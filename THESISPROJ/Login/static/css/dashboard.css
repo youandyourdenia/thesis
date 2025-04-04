@@ -1,124 +1,302 @@
-/* General Body Background */
-body {
-    background-color: #161B2C; /* Background color */
-    color: white;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 20%;
-    background-color: #1E273E; /* Updated Sidebar color */
-    height: 100vh;
-    padding: 1rem;
-}
-
-.sidebar .text-xl {
-    font-weight: bold;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 1rem;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-    color: #9ca3af;
-}
-
-/* Main Content */
-.main-content {
-    width: 90%;
-    padding: 1rem;
-}
-
-/* Adjust gap between Date & Time and Leaderboards cards */
-.datetime-card {
-    margin-bottom: 50px; /* Increased gap */
-}
-
-.learning-path-card, .badges-card {
-    margin-bottom: 20px;
-}
-
-/* Card Background Color Change */
-.profile-card, .datetime-card, .learning-path-card, .badges-card, .leaderboards-card, .achievements-card {
-    background-color: #1E273E; /* Updated card background color */
-    padding: 1rem;
-    border-radius: 0.5rem;
-}
-
-/* Profile Card Image */
-.profile-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-/* Badge Images */
-.badge-img {
-    width: 100px;
-    height: 100px;
-}
-
-/* Progress Bar */
-.progress-bar {
-    height: 8px;
-    background-color: #4b5563;
-    border-radius: 9999px;
-}
-
-.progress-bar > div {
-    height: 100%;
-    background-color: #10b981;
-    border-radius: 9999px;
-}
-
-/* Right Sidebar */
-.right-sidebar {
-    width: 50%;
-    padding: 1rem;
-}
-
-/* Achievement Card Styling */
-.achievement-card {
-    background-color: #374151;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-.achievement-card img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
-}
-
-/* Flex and Spacing Adjustments */
-.flex {
+/* ============================
+   Global Styles
+   ============================ */
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1F2937; /* Dark background */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ============================
+     Sidebar Styles
+     ============================ */
+  .sidebar {
+    background-color: #1E273E; /* Dark sidebar */
+    padding: 2rem; /* Add some padding */
+    width: 250px; /* Fixed width for sidebar */
+    height: 100vh; /* Full height of the screen */
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-}
-
-.flex > * {
-    margin-right: 0rem; /* Extremely small margin between flex items */
-}
-
-.flex > *:last-child {
-    margin-right: 0; /* Remove margin from the last item */
-}
-
-.flex.justify-between {
-    justify-content: space-between;
-}
-
-.flex.items-center {
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    justify-content: flex-start; /* Keep items aligned to the top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  }
+  
+  .sidebar img {
+    width: 10rem; /* Adjust size for logo */
+    height: 10rem;
+    margin-bottom: -10px;
+  }
+  
+  /* Logo Text */
+  .logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #F6E05E; /* Golden color for the logo */
+    transition: color 0.3s ease;
+  }
+  
+  .logo-text:hover {
+    color: #ECC94B; /* Slightly lighter yellow on hover */
+  }
+  
+  /* Sidebar Link Styles */
+  .sidebar-link {
+    color: #A0AEC0; /* Light gray color for the links */
+    text-decoration: none;
+    display: flex;
     align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Ensure the links fill the width */
+  }
+  
+  .sidebar-link:hover {
+    background-color: #63B3ED; /* Blue background on hover */
+    color: #fff; /* Change text color to white on hover */
+  }
+  
+  .sidebar-link i {
+    color: #F6E05E; /* Golden icon color */
+    margin-right: 0.75rem; /* Space between icon and text */
+  }
+  
+  .sidebar-link:hover i {
+    color: #fff; /* Change icon color to white on hover */
+  }
+  
+  /* ============================
+     Profile Styling
+     ============================ */
+
+/* Profile Container */
+.profile-container {
+  background-color: #1E273E;
 }
+
+/* Avatar Styling */
+.profile-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  border: 4px solid #ECC94B;
+}
+
+/* Profile Name */
+.profile-name {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #F6E05E;
+  margin-bottom: 0.5rem;
+}
+
+/* Profile Rank & Points */
+.profile-rank {
+  color: #ECC94B;
+}
+
+.profile-points {
+  color: #38A169;
+}
+
+/* Edit Profile Button */
+.profile-edit-btn {
+  background-color: #3182CE;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  align-self: flex-start; /* Makes sure it's aligned at the top */
+  margin-top: -0.5rem;     /* Fine-tune the vertical position */
+}
+
+.profile-edit-btn:hover {
+  background-color: #2B6CB0;
+}
+
+.profile-edit-btn i {
+  margin-right: 0.5rem;
+}
+
+
+
+  /* ============================
+     Main Content Styling
+     ============================ */
+  .main-content {
+    margin-left: 250px; /* Adjusted margin to account for fixed sidebar width */
+    padding: 2rem;
+    width: calc(100% - 250px); /* Ensures the content takes up remaining space */
+    box-sizing: border-box; /* Prevents unwanted margins */
+  }
+  
+  .bg-gray-700 {
+    background-color: #374151; /* Slightly lighter dark background for main content */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ============================
+     Section Layout
+     ============================ */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: #2D3748;
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-header a {
+    color: #63B3ED;
+  }
+  
+  .card-header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================
+     Flexbox Layouts
+     ============================ */
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .mt-4 {
+    margin-top: 2rem;
+  }
+  
+  .mt-2 {
+    margin-top: 1rem;
+  }
+  
+  /* ============================
+     Learning path Section
+     ============================ */
+
+  .learning-path-container {
+    background-color: #1E273E;
+  }
+  
+  .learning-path-header {
+    background-color: #262F4A;
+  }
+  
+  .learning-path-body {
+    background-color: #1E273E;
+  }
+  
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 1.75rem; /* Increased thickness for better visibility */
+    background-color: #4B5563; /* Gray background */
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #38A169, #48BB78); /* Green gradient */
+    transition: width 0.4s ease-in-out;
+    border-radius: 9999px 0 0 9999px; /* Smooth start edge */
+  }
+  
+  /* Progress Text Overlay */
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1rem; /* Larger text for better readability */
+    pointer-events: none; /* Allows clicks through the text */
+  }
+  
+  
+  
+  
+
+  /* ============================
+     Badge and Achievements Section
+     ============================ */
+  .badge {
+    width: 3rem;
+    height: 3rem;
+    background-color: #38A169;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* ============================
+     Hover Effects and Transitions
+     ============================ */
+  .card:hover {
+    background-color: #4A5568; /* Darker on hover */
+  }
+  
+  .card-header:hover {
+    background-color: #374151;
+    cursor: pointer;
+  }
+  
+  a {
+    color: #63B3ED;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

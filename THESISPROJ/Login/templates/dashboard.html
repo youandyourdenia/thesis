@@ -1,186 +1,164 @@
-<html>
-<head>
-    <title>Math Wizard Dashboard</title>
+<html lang="en">
+  <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-</head>
-<body>
-    <div class="flex">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="flex items-center mb-8">
-                <img alt="Math Wizard Logo" class="w-10 h-10 mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/arC1R0Rs4fP5LvMEZO9c3SQP6FhWRXUyxR29NuuaLl8.jpg" width="50"/>
-                <span class="text-xl font-bold">Math Wizard</span>
-            </div>
-            <nav>
-                <ul>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-gamepad mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Play</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-home mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Home</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-book mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">My Learning Path</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-folder mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Collections</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-archive mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Artifacts</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-trophy mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Leaderboards</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-cog mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Settings</a>
-                    </li>
-                    <li class="mb-4 flex items-center">
-                        <i class="fas fa-sign-out-alt mr-2"></i>
-                        <a class="hover:text-gray-400" href="#">Logout</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="grid grid-cols-2 gap-4 mb-4">
-                <!-- Profile Card -->
-                <div class="profile-card">
-                    <div class="flex items-center mb-4">
-                        <img alt="User Avatar" class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/7_sY-E-_mikzCYaAWUDB_uIv5kPiZrnUl1HZEq5Mrts.jpg" width="50"/>
-                        <div>
-                            <h2 class="text-lg font-bold">Juan, Dela Cruz</h2>
-                            <p>Rank: Wizard</p>
-                            <p>Points: 1,234</p>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="flex items-center mb-6">
+          <div class="flex justify-center items-center mb-6">
+            <img alt="Math Wizard Logo" class="w-32 h-32" src="{{ url_for('static', filename='images/logo.png') }}" />
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-play mr-3"></i> Play</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-home mr-3"></i> Home</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-book mr-3"></i> My Learning Path</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-folder mr-3"></i> Collections</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-gem mr-3"></i> Artifacts</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-trophy mr-3"></i> Leaderboards</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-cog mr-3"></i> Settings</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-sign-out-alt mr-3"></i> Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-1 p-6 overflow-y-auto">
+        <div class="grid grid-cols-3 gap-4">
+          <!-- Left Section -->
+          <div class="col-span-2 space-y-6">
+
+                    <!-- Profile -->
+                    <div class="profile-container p-6 rounded-lg shadow-2xl">
+                      <div class="flex justify-between">
+                        <div class="flex items-center space-x-4">
+                          <img alt="User Avatar" class="profile-avatar" src="https://storage.googleapis.com/a1aa/image/ajE5AACmAbwlTTjvoZTNTM-vWhTt4ZtigUY2UqdAdCY.jpg" />
+                          <div>
+                            <div class="profile-name">Juan, Dela Cruz</div>
+                            <div>Rank: <span class="profile-rank">Wizard</span></div>
+                            <div>Points: <span class="profile-points">1,234</span></div>
+                          </div>
                         </div>
+
+                        <button class="bg-blue-600 text-white px-5 py-2 rounded-full shadow-lg hover:bg-blue-700 transition self-start -mt-2 whitespace-nowrap">
+                          <i class="fas fa-user-edit mr-2"></i> Edit Profile
+                        </button>
+                        
+                      </div>
                     </div>
-                    <a class="text-blue-400 hover:underline" href="#">Edit profile</a>
+
+
+
+              <!-- Learning Path Windowed -->
+              <div class="learning-path-container rounded-lg overflow-hidden shadow-lg">
+                <div class="learning-path-header px-4 py-2 flex items-center">
+                  <i class="fas fa-road mr-2 text-blue-400"></i>
+                  <h2 class="text-lg font-semibold">Current Learning Path</h2>
                 </div>
-                <!-- Date & Time Card -->
-                <div class="datetime-card">
-                    <h2 class="text-lg font-bold">Date &amp; Time</h2>
-                    <p>March 03, 2025, Friday</p>
-                    <p>11:03 PM</p>
+                <div class="learning-path-body p-4">
+                  <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                      <span>Addition</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 80%">
+                        <span class="progress-text">4 of 5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                      <span>Subtraction</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 60%">
+                        <span class="progress-text">3 of 5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                      <span>Multiplication</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 20%">
+                        <span class="progress-text">1 of 5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between mb-2">
+                      <span>Division</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 40%">
+                        <span class="progress-text">2 of 5</span>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-4"></div> 
+
                 </div>
+              </div>
+
+
+            <!-- Badges Windowed -->
+            <div class="rounded-lg overflow-hidden shadow-lg">
+              <div class="bg-[#262F4A] px-4 py-2 flex items-center">
+                <i class="fas fa-award mr-2 text-yellow-300"></i>
+                <h2 class="text-lg font-semibold">Badges</h2>
+              </div>
+              <div class="bg-[#1E273E] p-4 flex space-x-3">
+                <img class="w-12 h-12" src="https://storage.googleapis.com/a1aa/image/P8QanTRtYSX5AFBVGt-FEXxRUY89X4gl9wtyy1Ehnws.jpg" />
+                <img class="w-12 h-12" src="https://storage.googleapis.com/a1aa/image/xCj-SCal6PmRN4rX4W8BDAiwkM-nfQBpuiAKuBDHzm8.jpg" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="space-y-6">
+            <!-- Leaderboards Windowed -->
+            <div class="rounded-lg overflow-hidden shadow-lg">
+              <div class="bg-[#262F4A] px-4 py-2 flex items-center">
+                <i class="fas fa-trophy mr-2 text-orange-300"></i>
+                <h2 class="text-lg font-semibold">Leaderboards</h2>
+              </div>
+              <div class="bg-[#1E273E] p-4 text-sm">
+                <div class="mb-2">Karlo Abian <span class="float-right">6,759 pts</span></div>
+                <div>Rap Chan <span class="float-right">6,357 pts</span></div>
+              </div>
             </div>
 
-            <!-- Current Learning Path Card -->
-            <div class="learning-path-card mb-4 min-h-[400px]">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-lg font-bold">Current Learning Path</h2>
-                    <a class="text-blue-400 hover:underline" href="#">See more</a>
+            <!-- Achievements Windowed -->
+            <div class="rounded-lg overflow-hidden shadow-lg">
+              <div class="bg-[#262F4A] px-4 py-2 flex items-center">
+                <i class="fas fa-star mr-2 text-yellow-400"></i>
+                <h2 class="text-lg font-semibold">Achievements</h2>
+              </div>
+              <div class="bg-[#1E273E] p-4 space-y-3">
+                <div class="flex items-center">
+                  <img class="w-10 h-10 mr-2" src="https://storage.googleapis.com/a1aa/image/QalCLEdfSP3TKXUFFZcdCyKNttNtytEULedeHiZ0TDU.jpg" />
+                  <span>Welcome Wizard</span>
                 </div>
-                <div class="mb-2">
-                    <div class="flex justify-between items-center mb-1">
-                        <span>Addition</span>
-                        <a class="text-blue-400 hover:underline" href="#">Continue</a>
-                    </div>
-                    <div class="progress-bar">
-                        <div style="width: 90%;"></div>
-                    </div>
+                <div class="flex items-center">
+                  <img class="w-10 h-10 mr-2" src="https://storage.googleapis.com/a1aa/image/dleRmzsMyPxKP7Q4vDUfdRbIkTNu1rxa-tzxVZ0ChD0.jpg" />
+                  <span>Division Champion</span>
                 </div>
-                <div class="mb-2">
-                    <div class="flex justify-between items-center mb-1">
-                        <span>Subtraction</span>
-                        <a class="text-blue-400 hover:underline" href="#">Continue</a>
-                    </div>
-                    <div class="progress-bar">
-                        <div style="width: 70%;"></div>
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <div class="flex justify-between items-center mb-1">
-                        <span>Multiplication</span>
-                        <a class="text-blue-400 hover:underline" href="#">Continue</a>
-                    </div>
-                    <div class="progress-bar">
-                        <div style="width: 40%;"></div>
-                    </div>
-                </div>
+              </div>
             </div>
-
-            <!-- Badges Card -->
-            <div class="badges-card mb-4 min-h-[265px]">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-lg font-bold">Badges</h2>
-                    <a class="text-blue-400 hover:underline" href="#">See more</a>
-                </div>
-                <div class="flex space-x-4">
-                    <img alt="Explorer of Knowledge Badge" class="badge-img" height="100" src="https://storage.googleapis.com/a1aa/image/hikHzOYKlR_cIKreEL37xFIoHs127ypSr3U3YrAZQZM.jpg" width="100"/>
-                    <img alt="Accuracy Ace Badge" class="badge-img" height="100" src="https://storage.googleapis.com/a1aa/image/nY0WYg1BrBaeck7rbjgasIDZSSTgw9zE2XE62TMd23I.jpg" width="100"/>
-                    <img alt="Consistency Badge" class="badge-img" height="100" src="https://storage.googleapis.com/a1aa/image/UtaBTZ5Cke0g7l8H29NJhoYqztNfMwAdLN0Bjg-NlXE.jpg" width="100"/>
-                    <img alt="First Steps Badge" class="badge-img" height="100" src="https://storage.googleapis.com/a1aa/image/77_8bteaVmkm6inMn9AD-7GH65zZFOm9kxofG4WPaww.jpg" width="100"/>
-                </div>
-            </div>
+          </div>
         </div>
-
-        <!-- Right Sidebar -->
-        <div class="right-sidebar">
-            <!-- Leaderboards Card -->
-            <div class="leaderboards-card mb-4 min-h-[430px] w-full">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-lg font-bold">Leaderboards</h2>
-                    <a class="text-blue-400 hover:underline" href="#">See more</a>
-                </div>
-                <ul>
-                    <li class="flex justify-between mb-2">
-                        <span>Karlo Abian</span>
-                        <span>6,759 points</span>
-                    </li>
-                    <li class="flex justify-between mb-2">
-                        <span>Rap Chan</span>
-                        <span>6,357 points</span>
-                    </li>
-                    <li class="flex justify-between mb-2">
-                        <span>Arnold Montanez</span>
-                        <span>5,253 points</span>
-                    </li>
-                    <li class="flex justify-between mb-2">
-                        <span>Gerry Sanchez</span>
-                        <span>5,129 points</span>
-                    </li>
-                    <li class="flex justify-between mb-2">
-                        <span>Jeff Beckman</span>
-                        <span>3,245 points</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Achievements Card -->
-            <div class="achievements-card mb-4 min-h-[400px] w-full">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-lg font-bold">Achievements</h2>
-                    <a class="text-blue-400 hover:underline" href="#">See more</a>
-                </div>
-                <div class="flex space-x-4">
-                    <div class="achievement-card">
-                        <img alt="Welcome Wizard Badge" class="w-12 h-12 mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/Q9T7JCzk3mqWYDmNkstIBYuEniLVEtP1RRhsIF97mYs.jpg" width="50"/>
-                        <p>Welcome Wizard</p>
-                        <p class="text-sm">Completed creating an account.</p>
-                    </div>
-                    <div class="achievement-card">
-                        <img alt="Division Champion Badge" class="w-12 h-12 mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/ws-nZh_x63-vJtjOI_N-hdv1docIZF9l1JsDQLqz9IM.jpg" width="50"/>
-                        <p>Division Champion</p>
-                        <p class="text-sm">Completed 3 division challenges.</p>
-                    </div>
-                    <div class="achievement-card">
-                        <img alt="Math Marathoner Badge" class="w-12 h-12 mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/VGWWEOFbsGVIK2twWlnZagpeTCr3SdwRehPUTc7h5lE.jpg" width="50"/>
-                        <p>Math Marathoner</p>
-                        <p class="text-sm">Completed 10 lessons in a week.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
