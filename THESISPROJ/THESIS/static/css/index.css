@@ -1,0 +1,59 @@
+/* Reset any default margin or padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the body to have a full-height background image */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Inherit the font from parent element */
+    background-image: url('../images/index.JPG'); /* Correct path to your image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;  /* Ensures no scrollbars */
+}
+
+
+/* Styling for the heading */
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: inherit; /* Ensures heading inherits the font style */
+}
+
+/* Custom button style */
+.custom-btn {
+    padding: 15px 30px;
+    background-color: rgb(192, 0, 0);  /* Red color */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.9em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;  /* Flexbox for text centering */
+    justify-content: center;  /* Horizontally center the text */
+    align-items: center;  /* Vertically center the text */
+    position: absolute;  /* Position it absolutely to move it to the bottom */
+    bottom: 80px;  /* 30px from the bottom */
+    width: 250px;  /* Set the width */
+    height: 60px;  /* Set the height */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);  /* Shadow effect */
+}
+
+/* Hover effect for the button */
+.custom-btn:hover {
+    background-color: rgb(153, 0, 0); /* Darker red on hover */
+    transform: scale(1.1); /* Slightly increase the size on hover */
+    color: rgb(255, 255, 255); /* Change text color to white on hover */
+}
+
+

@@ -1,0 +1,542 @@
+/* ============================
+   Global Styles
+   ============================ */
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1F2937; /* Dark background */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ============================
+     Sidebar Styles
+     ============================ */
+  .sidebar {
+    background-color: #1E273E; /* Dark sidebar */
+    padding: 2rem; /* Add some padding */
+    width: 250px; /* Fixed width for sidebar */
+    height: 100vh; /* Full height of the screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    justify-content: flex-start; /* Keep items aligned to the top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  }
+  
+/* Base styles for the image */
+.sidebar img {
+  width: 10rem; /* Adjust size for logo */
+  height: 10rem;
+  margin-bottom: -10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  pointer-events: auto; /* Enable clicking */
+}
+
+/* Pop-out effect triggered by 'pop' class */
+.sidebar img.pop {
+  animation: pop-out 0.4s ease-out; /* Apply pop-out animation */
+  filter: brightness(1.2); /* Optional: slightly brighten the image when clicked */
+}
+
+/* Pop-out animation keyframes */
+@keyframes pop-out {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.3); /* Scale up to 130% */
+  }
+  100% {
+    transform: scale(1); /* Return to the normal size */
+  }
+}
+
+  
+  
+/* Sidebar Link Styles */
+.sidebar-link {
+  color: #A0AEC0; /* Light gray color for the links */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%; /* Ensure the links fill the width */
+}
+
+.sidebar-link:hover {
+  background-color: #63B3ED; /* Blue background on hover */
+  color: #fff; /* Change text color to white on hover */
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+.sidebar-link i {
+  color: #F6E05E; /* Golden icon color */
+  margin-right: 0.75rem; /* Space between icon and text */
+}
+
+.sidebar-link:hover i {
+  color: #fff; /* Change icon color to white on hover */
+}
+
+  
+
+/* ============================
+   Profile Styling
+   ============================ */
+
+/* Profile Container */
+.profile-container {
+  background-color: #1E273E;
+}
+
+/* Avatar Styling - Bigger */
+.profile-avatar {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 0.5rem; /* optional: small rounding for modern look */
+  border: 2px solid #808080;
+  object-fit: cover; /* ensures image covers the whole area */
+}
+
+/* Large Rank icon */
+.rank-badge-large {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Profile Name */
+.profile-name {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #F6E05E;
+}
+
+/* Profile Rank & Points */
+.profile-rank {
+  color: #ECC94B;
+}
+
+.profile-points {
+  color: #38A169;
+}
+
+/* Edit Profile Button */
+.profile-edit-btn {
+  background-color: #3182CE;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: -0.5rem;
+}
+
+.profile-edit-btn:hover {
+  background-color: #2B6CB0;
+}
+
+.profile-edit-btn i {
+  margin-right: 0.5rem;
+}
+
+
+
+
+
+  /* ============================
+     Main Content Styling
+     ============================ */
+  .main-content {
+    margin-left: 250px; /* Adjusted margin to account for fixed sidebar width */
+    padding: 2rem;
+    width: calc(100% - 250px); /* Ensures the content takes up remaining space */
+    box-sizing: border-box; /* Prevents unwanted margins */
+  }
+  
+  .bg-gray-700 {
+    background-color: #374151; /* Slightly lighter dark background for main content */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ============================
+     Section Layout
+     ============================ */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: #2D3748;
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-header a {
+    color: #63B3ED;
+  }
+  
+  .card-header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================
+     Flexbox Layouts
+     ============================ */
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .mt-4 {
+    margin-top: 2rem;
+  }
+  
+  .mt-2 {
+    margin-top: 1rem;
+  }
+  
+  /* ============================
+     Learning path Section
+     ============================ */
+
+  .learning-path-container {
+    background-color: #1E273E;
+  }
+  
+  .learning-path-header {
+    background-color: #262F4A;
+  }
+  
+  .learning-path-body {
+    background-color: #1E273E;
+  }
+  
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 1.75rem; /* Increased thickness for better visibility */
+    background-color: #4B5563; /* Gray background */
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #38A169, #48BB78); /* Green gradient */
+    transition: width 0.4s ease-in-out;
+    border-radius: 9999px 0 0 9999px; /* Smooth start edge */
+  }
+  
+  /* Progress Text Overlay */
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1rem; /* Larger text for better readability */
+    pointer-events: none; /* Allows clicks through the text */
+  }
+  
+  
+  
+  
+
+/* ============================
+   Badges Section Styling
+   ============================ */
+/* Badge Container Header */
+.badge-header {
+  background-color: #262F4A;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+
+
+/* Badge Content Container */
+.badge-content {
+  background-color: #1E273E;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Space between badges */
+  flex-wrap: wrap; /* Allows badges to wrap on smaller screens */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 230px; /* Ensures the content adjusts based on the badges inside */
+}
+
+/* Badge Item Container */
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Centers the text (name) below the image */
+  margin-bottom: 1rem; /* Add some space between rows */
+  padding: 1rem; /* Padding around each badge item */
+  gap: 1rem; /* Space between image and name */
+  justify-content: center;
+  height: auto; /* Ensures the height is auto-adjusting based on content */
+}
+
+/* Badge Image Styling */
+.badge-img {
+  width: 8rem; /* Badge size */
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Badge Hover Effects */
+.badge-img:hover {
+  transform: scale(1.15);
+}
+
+/* Badge Name Styling */
+.badge-name {
+  font-size: 0.8rem;
+  color: #fff;
+  margin-top: 0.3rem; /* Moves name closer to the badge */
+}
+
+
+  
+/* ============================
+   Leaderboards Section Styling
+   ============================ */
+
+   .leaderboard-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem; /* Reduced margin between leaderboard items */
+    padding: 0.75rem; /* Reduced padding */
+    border-radius: 0.5rem;
+    background-color: #1E273E;
+; /* Background for the leaderboard item */
+  }
+  
+  /* Border color based on rank */
+  .rank-1 {
+    border: 2px solid #4400ff; /* Purple border for top 1 */
+  }
+  
+  .rank-2 {
+    border: 2px solid #ff00d4; /* Pink border for top 2 */
+  }
+  
+  .rank-3 {
+    border: 2px solid #eeff00; /* Yellow border for top 3 */
+  }
+  
+  .rank-4 {
+    border: 2px solid #8c00ff; /* Violet border for top 4 */
+  }
+  
+  .rank-5 {
+    border: 2px solid #ff0000; /* Red border for top 5 */
+  }
+  
+  /* Background color for leaderboard container */
+  .bg {
+    background-color: #1E273E;
+  }
+  
+  /* Last leaderboard item margin reset */
+  .leaderboard-item:last-child {
+    margin-bottom: 0; /* Remove margin from the last item */
+  }
+  
+  /* Rank (badge) size */
+  .rank {
+    margin-right: 0.75rem; /* Reduce the space between the badge and text */
+  }
+  
+  .rank-img {
+    width: 2.5rem; /* Reduced badge size */
+    height: 2.5rem;
+    object-fit: contain; /* Ensure the full image is visible */
+  }
+  
+  /* Leaderboard info styling */
+  .leaderboard-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem; /* Adjust font size for clarity */
+    color: white; /* Ensures all text inside is white by default */
+  }
+  
+  /* Combined name and points layout */
+  .leaderboard-name-and-points {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Take up full width of the parent */
+    font-size: 1rem; /* Adjust font size for both name and points */
+  }
+  
+  /* Leaderboard name styling */
+  .leaderboard-name {
+    font-weight: bold;
+    font-size: 1.2rem; /* Larger font for the name */
+    color: #fff; /* White color for name */
+    margin-right: 0.5rem; /* Add some space to the right of the name */
+  }
+  
+  /* Leaderboard points styling */
+  .leaderboard-points {
+    color: #FFD700; /* Gold color for points */
+    font-size: 1.2rem; /* Larger font for the points */
+    font-weight: bold; /* Bold points */
+  }
+
+  /* Space around the pipe symbol */
+  .leaderboard-name-and-points span {
+    display: inline-block;
+  }
+  
+  .leaderboard-name-and-points .leaderboard-name + span {
+    margin-left: 0.5rem; /* Add space after the '|' symbol */
+  }
+
+
+/* ============================
+   Achievements Section Styling
+   ============================ */
+
+/* Container for achievements */
+.achievement-container {
+  display: flex;
+  justify-content: space-between; /* Distribute achievements evenly */
+  gap: 1rem; /* Space between each achievement */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Individual achievement item styling */
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #1E273E; /* Background color for achievement item */
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 20%; /* Adjust the percentage for desired width (e.g., 20% for 5 items per row) */
+  min-width: 140px; /* Ensure minimum size for each item */
+  max-width: 240px; /* You can adjust this for a larger or smaller width */
+  height: 298px; /* Fixed height for each achievement item */
+  border: 2px solid transparent;
+  background-origin: border-box;
+  animation: glowing-border 5s ease-in-out infinite;
+}
+
+/* Glowing border effect animation */
+@keyframes glowing-border {
+  0% {
+    border-color: #00ffb3;
+  }
+  50% {
+    border-color: #00ff37;
+  }
+  100% {
+    border-color: #008341;
+  }
+}
+
+/* Achievement image styling */
+.achievement-img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Achievement name styling */
+.achievement-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin-top: 1.7rem;
+  text-align: center;
+}
+
+/* Achievement description styling */
+.achievement-description {
+  font-size: 0.7rem;
+  color: #ccc;
+  text-align: center;
+  margin-top: 1rem; /* Adds space between the name and description */
+}
+
+
+  
+  
+  /* ============================
+     Hover Effects and Transitions
+     ============================ */
+  .card:hover {
+    background-color: #4A5568; /* Darker on hover */
+  }
+  
+  .card-header:hover {
+    background-color: #374151;
+    cursor: pointer;
+  }
+  
+  a {
+    color: #63B3ED;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,300 @@
+<html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="flex items-center mb-6">
+          <div class="flex justify-center items-center mb-6">
+            <!-- Assuming this is inside your HTML template -->
+            <img alt="Math Wizard Logo" 
+                class="w-32 h-32" 
+                id="logo" 
+                src="{{ url_for('static', filename='images/logo.png') }}" />
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-play mr-3"></i> Play</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-home mr-3"></i> Home</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-book mr-3"></i> My Learning Path</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-folder mr-3"></i> Collections</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-gem mr-3"></i> Artifacts</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-trophy mr-3"></i> Leaderboards</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-cog mr-3"></i> Settings</a></li>
+            <li><a class="sidebar-link" href="#"><i class="fas fa-sign-out-alt mr-3"></i> Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-1 p-6 overflow-y-auto">
+        <div class="grid grid-cols-3 gap-4">
+          <!-- Left Section -->
+          <div class="col-span-2 space-y-6">
+
+
+
+<!-- Profile -->
+<div class="profile-container p-6 rounded-lg shadow-2xl">
+  <div class="flex justify-between">
+    <div class="flex items-center space-x-6">
+      <!-- Avatar -->
+      <img alt="User Avatar" class="profile-avatar" src="https://storage.googleapis.com/a1aa/image/ajE5AACmAbwlTTjvoZTNTM-vWhTt4ZtigUY2UqdAdCY.jpg" />
+
+      <!-- Info Section -->
+      <div class="flex flex-col items-start">
+        <!-- Profile Name at the top -->
+        <div class="profile-name mb-2">Juan, Dela Cruz</div>
+
+        <!-- Badge + Rank + Points below the name -->
+        <div class="flex items-center space-x-4">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Rank Badge" class="rank-badge-large" />
+          <div>
+            <div class="profile-rank text-xl font-semibold text-yellow-400">Wizard</div>
+            <div class="profile-points text-lg">Points: <span class="text-green-400">1,234</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Button -->
+    <button class="bg-blue-600 text-white px-5 py-2 rounded-full shadow-lg hover:bg-blue-700 transition self-start -mt-2 whitespace-nowrap">
+      <i class="fas fa-user-edit mr-2"></i> Edit Profile
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+              <!-- Learning Path Windowed -->
+              <div class="learning-path-container rounded-lg overflow-hidden shadow-lg">
+                <div class="learning-path-header px-4 py-2 flex items-center">
+                  <i class="fas fa-road mr-2 text-blue-400"></i>
+                  <h2 class="text-lg font-semibold">Current Learning Path</h2>
+                </div>
+                <div class="learning-path-body p-4">
+                  <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                      <span>Addition</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 80%">
+                        <span class="progress-text">4 of 5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                      <span>Subtraction</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 60%">
+                        <span class="progress-text">3 of 5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                      <span>Multiplication</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 20%">
+                        <span class="progress-text">1 of 5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between mb-2">
+                      <span>Division</span><a class="text-blue-400 hover:underline" href="#">Continue</a>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 40%">
+                        <span class="progress-text">2 of 5</span>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-4"></div> 
+
+                </div>
+              </div>
+
+
+            <!-- Badges Windowed -->
+            <div class="rounded-lg overflow-hidden shadow-lg">
+              <div class="badge-header px-4 py-2 flex items-center">
+                <i class="fas fa-award mr-2 text-yellow-300"></i>
+                <h2 class="text-lg font-semibold">Badges</h2>
+              </div>
+              <div class="badge-content p-4 flex justify-center items-center gap-4 flex-wrap">
+                <div class="badge-item">
+                  <img class="badge-img" src="{{ url_for('static', filename='images/bdgimg/Grand wizard of math.png') }}" />
+                  <div class="badge-name">Grand Wizard of Math</div>  <!-- Name placed below the image -->
+                </div>
+                <div class="badge-item">
+                  <img class="badge-img" src="{{ url_for('static', filename='images/bdgimg/Quick thinker.png') }}" />
+                  <div class="badge-name">Quick Thinker</div>  <!-- Name placed below the image -->
+                </div>
+                <div class="badge-item">
+                  <img class="badge-img" src="{{ url_for('static', filename='images/bdgimg/Math alchemist.png') }}" />
+                  <div class="badge-name">Math Alchemist</div>  <!-- Name placed below the image -->
+                </div>
+                <div class="badge-item">
+                  <img class="badge-img" src="{{ url_for('static', filename='images/bdgimg/Division dynamo.png') }}" />
+                  <div class="badge-name">Division Dynamo</div>  <!-- Name placed below the image -->
+                </div>
+                <div class="badge-item">
+                  <img class="badge-img" src="{{ url_for('static', filename='images/bdgimg/Daily Adventurer.png') }}" />
+                  <div class="badge-name">Daily Adventurer</div>  <!-- Name placed below the image -->
+                </div>
+                <div class="badge-item">
+                  <img class="badge-img" src="{{ url_for('static', filename='images/bdgimg/Flawless victory.png') }}" />
+                  <div class="badge-name">Flawless Victory</div>  <!-- Name placed below the image -->
+                </div>
+
+               </div>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="space-y-6">
+
+<!-- Leaderboards Windowed -->
+<div class="rounded-lg overflow-hidden shadow-lg">
+  <div class="badge-header px-4 py-2 flex items-center">
+    <i class="fas fa-award mr-2 text-yellow-300"></i>
+    <h2 class="text-lg font-semibold">Leaderboards</h2>
+  </div>
+  <div class="bg p-4 text-sm">
+    <div class="leaderboard-item rank-1">
+      <div class="rank">
+        <img class="rank-img" src="{{ url_for('static', filename='images/rankimg/top1.png') }}" />
+      </div>
+      <div class="leaderboard-info">
+        <div class="leaderboard-name-and-points">
+          <span class="leaderboard-name">Karlo Abian</span> |
+          <span class="leaderboard-points">6,759 pts</span>
+        </div>
+      </div>
+    </div>
+    <div class="leaderboard-item rank-2">
+      <div class="rank">
+        <img class="rank-img" src="{{ url_for('static', filename='images/rankimg/top2.png') }}" />
+      </div>
+      <div class="leaderboard-info">
+        <div class="leaderboard-name-and-points">
+          <span class="leaderboard-name">Rap Chan</span> |
+          <span class="leaderboard-points">6,357 pts</span>
+        </div>
+      </div>
+    </div>
+    <div class="leaderboard-item rank-3">
+      <div class="rank">
+        <img class="rank-img" src="{{ url_for('static', filename='images/rankimg/top3.png') }}" />
+      </div>
+      <div class="leaderboard-info">
+        <div class="leaderboard-name-and-points">
+          <span class="leaderboard-name">Chris Lee</span> |
+          <span class="leaderboard-points">5,980 pts</span>
+        </div>
+      </div>
+    </div>
+    <div class="leaderboard-item rank-4">
+      <div class="rank">
+        <img class="rank-img" src="{{ url_for('static', filename='images/rankimg/top4.png') }}" />
+      </div>
+      <div class="leaderboard-info">
+        <div class="leaderboard-name-and-points">
+          <span class="leaderboard-name">Jessica Wong</span> |
+          <span class="leaderboard-points">5,432 pts</span>
+        </div>
+      </div>
+    </div>
+    <div class="leaderboard-item rank-5">
+      <div class="rank">
+        <img class="rank-img" src="{{ url_for('static', filename='images/rankimg/top5.png') }}" />
+      </div>
+      <div class="leaderboard-info">
+        <div class="leaderboard-name-and-points">
+          <span class="leaderboard-name">Mike Johns</span> |
+          <span class="leaderboard-points">5,210 pts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Achievements Windowed -->
+<div class="rounded-lg overflow-hidden shadow-lg">
+  <div class="bg-[#262F4A] px-4 py-2 flex items-center">
+    <i class="fas fa-star mr-2 text-yellow-400"></i>
+    <h2 class="text-lg font-semibold">Achievements</h2>
+  </div>
+  <div class="bg-[#1E273E] p-4">
+    <div class="achievement-container">
+      <div class="achievement-item">
+        <img class="achievement-img" src="{{ url_for('static', filename='images/bdgimg/First Steps.png') }}" />
+        <span class="achievement-name">First Steps </span>
+        <span class="achievement-description">Earned by completing the first math lesson.</span>
+      </div>
+      <div class="achievement-item">
+        <img class="achievement-img" src="{{ url_for('static', filename='images/bdgimg/Accuracy Ace.png') }}" />
+        <span class="achievement-name">Division Champion</span>
+        <span class="achievement-description">Score 100% on a game.</span>
+      </div>
+      <div class="achievement-item">
+        <img class="achievement-img" src="{{ url_for('static', filename='images/bdgimg/wizard mentor.png') }}" />
+        <span class="achievement-name">Math Master</span>
+        <span class="achievement-description">Talk with Counticus.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get the image element
+      const image = document.querySelector('.sidebar img');
+    
+      // Add an event listener for the click event
+      image.addEventListener('click', function() {
+        // Add the 'pop' class to trigger the pop-out animation
+        image.classList.add('pop');
+    
+        // After the animation is done (0.4s), remove the 'pop' class to reset the image
+        setTimeout(function() {
+          image.classList.remove('pop');
+        }, 400); // Match this time to the duration of the animation (0.4s)
+      });
+    </script>
+    
+    
+    
+
+  </body>
+</html>
