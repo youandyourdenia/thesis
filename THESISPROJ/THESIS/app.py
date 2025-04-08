@@ -74,6 +74,11 @@ def register():
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/game')
+@login_required
+def game():
+    return render_template('game.html')
+
 
 @app.route('/logout')
 @login_required

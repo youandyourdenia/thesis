@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <!-- Tailwind CSS and Font Awesome Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Custom Game Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+    <!-- Font Awesome Icons for heart and other icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  </head>
+  <body class="bg-blue-100 flex flex-col items-center justify-between min-h-screen">
+    
+    <!-- Game container with background image -->
+    <div class="gamebg w-full flex-1 bg-cover bg-center" style="background-image: url('static/images/gameimg/greenbg.jpg');">
+        <!-- Sample Name Section (can change the name and styling here) -->
+      <div class="absolute top-4 left-4 flex items-center space-x-2">
+        <div class="bg-white p-2 rounded-lg shadow-md">
+          <p class="font-bold">
+            Sample name <!-- Change the name here -->
+          </p>
+        </div>
+        <div class="flex space-x-1">
+          <!-- Heart Icons (can change the number of hearts or colors) -->
+          <i class="fas fa-heart text-red-500"></i>
+          <i class="fas fa-heart text-red-500"></i>
+          <i class="fas fa-heart text-red-500"></i>
+          <i class="fas fa-heart text-red-500"></i>
+          <i class="fas fa-heart text-red-500"></i>
+        </div>
+      </div>
+
+      <!-- Monster Name Section (can change the name and styling here) -->
+      <div class="absolute top-4 right-4 flex items-center space-x-2">
+        <div class="bg-white p-2 rounded-lg shadow-md">
+          <p class="font-bold">
+            Monster name <!-- Change the name here -->
+          </p>
+        </div>
+        <div class="flex space-x-1">
+          <!-- Heart Icons for Monster (can change the number of hearts or colors) -->
+          <i class="fas fa-heart text-red-500"></i>
+          <i class="fas fa-heart text-red-500"></i>
+          <i class="fas fa-heart text-red-500"></i>
+        </div>
+      </div>
+
+      <!-- Indicator dots (used for visual effects, can adjust colors and positioning) -->
+      <div class="absolute top-16 left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+        <div class="w-4 h-4 bg-black rounded-full"></div>
+        <div class="w-4 h-4 bg-black rounded-full"></div>
+        <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+        <div class="w-4 h-4 bg-black rounded-full"></div>
+        <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+      </div>
+
+      <!-- Main content section with characters (you can change images and text here) -->
+      <div class="flex justify-between items-center mt-20 px-4">
+        <!-- Wizard character (change the image source here) -->
+        <img alt="Wizard character" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/raUbD71iFYq-U1Yml26Zcr8Ah8pGAFtfHBuPj5mjZ5w.jpg" width="100"/>
+        <p class="text-4xl font-bold">
+          2 + 2 = ? <!-- Change the question or the text here -->
+        </p>
+        <!-- Monster character (change the image source here) -->
+        <img alt="Monster character" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/rRqKqcirVjsHBRYUKip0Q807MQFPzmCDhnZij_5kkzQ.jpg" width="100"/>
+      </div>
+    </div>
+
+<!-- Combined Ground and Characters Section -->
+<div class="ground-container w-full">
+    <!-- Character (Wizard) on the left -->
+    <img src="https://i.ibb.co/dQPWgy4/wizard-sprite.png" alt="Wizard"
+         class="character wizard absolute z-20">
+  
+    <!-- Monster Character on the right -->
+    <img src="https://i.ibb.co/Zhf2pmH/monster-sprite.png" alt="Monster"
+         class="character monster absolute z-20">
+  
+    <!-- Ground (Platform) -->
+    <div class="ground w-full"></div>
+  </div>
+  
+  
+
+
+    <!-- Footer section for controls and other sections -->
+    <div class="game-control-box p-4 w-full">
+      <!-- Main game bar split into 3 sections -->
+      <div class="grid grid-cols-3 gap-4">
+        
+        <!-- Potion Section -->
+        <div class="potion-section p-4">
+          <!-- Placeholder for potion buttons or items -->
+          <button class="bg-green-500 text-white p-2 rounded-lg w-full">Potion 1</button>
+          <button class="bg-green-500 text-white p-2 rounded-lg w-full">Potion 2</button>
+          <button class="bg-green-500 text-white p-2 rounded-lg w-full">Potion 3</button>
+        </div>
+
+        
+        <div class="grid grid-cols-4 gap-2 p-4 bg-gray-900 rounded-lg">
+            <!-- First Row: 7, 8, 9, and Input Field -->
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">7</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">8</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">9</button>
+            <div class="col-span-1 row-span-1 flex items-center justify-center">
+                <div class="bg-white text-black text-lg font-bold p-3 rounded-lg w-full text-center" style="width: 130px;">4</div>
+            </div>
+        
+            <!-- Second Row: 4, 5, 6, and Attack Button -->
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">4</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">5</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">6</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg col-span-1 row-span-2">Attack</button>
+        
+            <!-- Third Row: 1, 2, 3 -->
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">1</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">2</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">3</button>
+        
+            <!-- Fourth Row: Backspace, 0, . -->
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">
+                <i class="fas fa-arrow-left"></i> <!-- Example for Backspace Icon -->
+            </button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">0</button>
+            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">.</button>
+        </div>
+        
+  
+  
+  
+
+        <!-- Chatbot Section -->
+        <div class="chatbot-section p-4 ">
+          <!-- Placeholder for chatbot interface -->
+          <textarea class="w-full p-2 rounded-lg" rows="4" placeholder="Chat with the wizard..."></textarea>
+          <button class="bg-blue-500 text-white p-2 rounded-lg mt-2 w-full">Send Message</button>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
