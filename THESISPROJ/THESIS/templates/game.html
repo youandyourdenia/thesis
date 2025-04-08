@@ -67,11 +67,11 @@
 <!-- Combined Ground and Characters Section -->
 <div class="ground-container w-full">
     <!-- Character (Wizard) on the left -->
-    <img src="https://i.ibb.co/dQPWgy4/wizard-sprite.png" alt="Wizard"
+    <img src="{{ url_for('static', filename='images/gameimg/char/char.png') }}" alt="Wizard"
          class="character wizard absolute z-20">
   
     <!-- Monster Character on the right -->
-    <img src="https://i.ibb.co/Zhf2pmH/monster-sprite.png" alt="Monster"
+    <img src="{{ url_for('static', filename='images/gameimg/mnstr/boss 1.png') }}" alt="Monster"
          class="character monster absolute z-20">
   
     <!-- Ground (Platform) -->
@@ -95,32 +95,32 @@
         </div>
 
         
-        <div class="grid grid-cols-4 gap-2 p-4 bg-gray-900 rounded-lg">
+        <div class="grid grid-cols-4 gap-1 p-4 bg-gray-900 rounded-lg">
             <!-- First Row: 7, 8, 9, and Input Field -->
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">7</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">8</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">9</button>
-            <div class="col-span-1 row-span-1 flex items-center justify-center">
-                <div class="bg-white text-black text-lg font-bold p-3 rounded-lg w-full text-center" style="width: 130px;">4</div>
-            </div>
+            <button class="number-button">7</button>
+            <button class="number-button">8</button>
+            <button class="number-button">9</button>
+            <input type="text" class="placeholder" placeholder="Enter text">
+
+          
         
             <!-- Second Row: 4, 5, 6, and Attack Button -->
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">4</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">5</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">6</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg col-span-1 row-span-2">Attack</button>
+            <button class="number-button">4</button>
+            <button class="number-button">5</button>
+            <button class="number-button">6</button>
+            <button class="attack-button text-white text-lg font-bold p-3 rounded-lg col-span-1 row-span-2">Attack</button>
         
             <!-- Third Row: 1, 2, 3 -->
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">1</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">2</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">3</button>
+            <button class="number-button">1</button>
+            <button class="number-button">2</button>
+            <button class="number-button">3</button>
         
             <!-- Fourth Row: Backspace, 0, . -->
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">
+            <button class="number-button text-white text-lg font-bold p-3 rounded-lg">
                 <i class="fas fa-arrow-left"></i> <!-- Example for Backspace Icon -->
             </button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">0</button>
-            <button class="bg-green-500 text-white text-lg font-bold p-3 rounded-lg">.</button>
+            <button class="number-button">0</button>
+            <button class="number-button">.</button>
         </div>
         
   

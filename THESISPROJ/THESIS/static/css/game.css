@@ -58,17 +58,21 @@ body {
 
   .character {
     position: absolute;
-    bottom: 50px; /* Ensures the character is above the platform */
+    bottom: 10px; /* Ensures the character is above the platform */
     z-index: 20;
     animation: bobble 1s ease-in-out infinite;
   }
   
   .wizard {
     left: 5%;
+    height: 250px;
+    width: auto;
   }
   
   .monster {
     right: 5%;
+    height: 350px;
+    width: auto;
   }
   
   @keyframes bobble {
@@ -112,6 +116,46 @@ body {
   /* ============================
      Answer Section Styling
      ============================ */
+     .number-button {
+        background-color: #00B050; /* Dark gray for footer */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 40px;
+        width: 130px;
+        position: relative;
+        color: rgb(255, 255, 255); /* Black text */
+        font-size: 1.125rem; /* 18px font size */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold; /* Bold text */
+     } 
+
+     .placeholder {
+      background-color: white; /* White background */
+      color: black; /* Black text */
+      font-size: 1.125rem; /* 18px font size */
+      font-weight: bold; /* Bold text */
+      padding: 1rem; /* Padding around the content */
+      height: 40px; /* Fixed height */
+      width: auto; /* Auto width to adjust based on content */
+      position: relative; /* Position relative for any future adjustments */
+      text-align: center; /* Center the text horizontally */
+      border: 2px solid #ccc; /* Light gray border */
+      border-radius: 8px; /* Rounded corners */
+      outline: none; /* Remove outline */
+      transition: border-color 0.3s ease; /* Smooth transition for border color */
+  }
+  
+  .placeholder::placeholder {
+      color: #aaa; /* Light grey color for the placeholder text */
+  }
+  
+  .placeholder:focus {
+      border-color: #007BFF; /* Blue border when focused */
+  }
+  
+
      .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
@@ -119,7 +163,11 @@ body {
     }
     
     .col-span-1 {
-        grid-column: span 1; /* Spans one column */
+        background-color: #2d3748; /* Dark gray for footer */
+        padding: 1rem;
+        height: 40px;
+        width: auto;
+        position: relative;
     }
     
     .row-span-1 {
