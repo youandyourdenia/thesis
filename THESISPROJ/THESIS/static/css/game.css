@@ -2,232 +2,508 @@
 
 /* Body styles - change the background color and layout */
 body {
-    background-color: #bfdbfe; /* Tailwind bg-blue-100 - change the background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
+  background-color: #bfdbfe; /* Tailwind bg-blue-100 - change the background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+/* Profile Image Styles with Glowing Border */
+.profile-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%; /* Circular profile image */
+  border: 2px solid #ccc;
+  animation: borderGlow 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for glowing border */
+@keyframes borderGlow {
+  0% {
+    border-color: #ccc;
+    box-shadow: 0 0 5px #ccc;
+  }
+  50% {
+    border-color: #00f;
+    box-shadow: 0 0 15px #00f; /* Glowing blue */
+  }
+  100% {
+    border-color: #ccc;
+    box-shadow: 0 0 5px #ccc;
+  }
+}
+
+/* Main Wrapper Container */
+.flex {
+  display: flex;
+  justify-content: space-between; /* This will place the player on the left and monster on the right */
+  align-items: center;
+  padding: 1rem;
+  width: 100%; /* Make sure the wrapper takes full width of the parent container */
+  position: relative; /* Important for the absolute positioning of the question */
+}
+
+/* Make sure the player and monster containers are relative so the images align properly */
+.player-container {
+  background-image: url('../images/gameimg/player.png'); /* Background image for the container */
+  background-size: contain;  /* Ensure the whole image fits inside without cropping */
+  background-position: center;  /* Keeps the image centered */
+  background-repeat: no-repeat;  /* Prevents the image from repeating */
+  margin-top: 1px;
+  width: 350px;                /* Full width of the parent container */
+  height: 100px;               /* You can adjust the height according to your design */
+}
+/* Player Name Styling */
+.player-name {
+  font-size: 1.7rem;
+  font-weight: normal;
+  position: absolute;   /* Absolute positioning inside the container */
+  top: 25px;            /* Adjust top position (change based on your design) */
+  left: 120px;          /* Adjust left position (change based on your design) */
+  color: #ffffff;       /* Dark gray color */
+}
+/* Health Bar Styles */
+.player-health-bar {
+  display: flex;
+  gap: 0.3rem;
+  padding: 3px;
+  position: absolute;  /* Absolute positioning inside the container */
+  top: 80px;           /* Adjust top position to move it down */
+  left: 110px;         /* Adjust left position for the player */
+  width: fit-content;  /* Ensures the health bar only takes as much space as needed */
+}
+
+/* Player Section Image */
+.player-image {
+  width: 100px;
+  height: 100px;
+  margin-top: 55px;
+  position: absolute;
+  left: 0;
+  border-radius: 5%;       /* Circular profile image */
+  margin-right: 0;
+
+  /* 3D Border with inset shadow */
+  border: 5px solid #17125c;         /* Outer border */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(23, 18, 92, 0.8);  /* Inset shadow + outer glow */
+  animation: glowAnimation 1.5s infinite alternate;  /* Pulsating glow effect */
+}
+
+/* Keyframes for glowing animation */
+@keyframes glowAnimation {
+  0% {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(23, 18, 92, 0.8);
+  }
+  50% {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(23, 18, 92, 1);  /* Intensified glow */
+  }
+  100% {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(23, 18, 92, 0.8);  /* Regular glow */
+  }
+}
+
+
+
+
+
+
+
+/* Adjust Profile Image for Player and Monster */
+.profile-image {
+  width: 100px;
+  height: 100px;
+}
+
+/* Name Box Styling */
+.name-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 9px;
+  border-radius: 8px;
+  height: 10px;
+  width: fit-content;
+}
+
+.health-bar {
+  display: flex;             /* Aligns items (hearts) horizontally */
+  gap: 1px;                  /* Adds space between heart images */
+}
+
+.heart-image {
+  width: 40px; /* Adjust the size of the heart image */
+  height: 40px; /* Adjust the height of the heart image */
+  margin-right: 1px; /* Adjust space between the heart images */
+  /* Optional: Glow effect */
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+}
+
+
+.name-health {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.monster-container {
+  background-image: url('../images/gameimg/monster.png'); /* Background image for the container */
+  background-size: contain;  /* Ensure the whole image fits inside without cropping */
+  background-position: center;  /* Keeps the image centered */
+  background-repeat: no-repeat;  /* Prevents the image from repeating */
+  margin-top: 1px;
+  width: 350px;                /* Full width of the parent container */
+  height: 100px;               /* You can adjust the height according to your design */
+}
+
+/* Name and Health Bar Section */
+
+
+
+/* Monster Name Styling */
+.monster-name {
+  font-size: 1.7rem;
+  font-weight: normal;
+  position: absolute;   /* Absolute positioning inside the container */
+  top: 25px;            /* Adjust top position (change based on your design) */
+  right: 120px;          /* Adjust left position (change based on your design) */
+  color: #ffffff;       /* Dark gray color */
+}
+
+.monster-health-bar {
+  display: flex;
+  gap: 0.3rem;
+  padding: 3px;
+  position: absolute;  /* Absolute positioning inside the container */
+  top: 80px;           /* Adjust top position to move it down */
+  right: 110px;        /* Adjust right position for the monster */
+  width: fit-content;  /* Ensures the health bar only takes as much space as needed */
+}
+/* Monster Section Image */
+.monster-image {
+  width: 100px;
+  height: 100px;
+  margin-top: 55px;
+  position: absolute;
+  right: 0;
+  border-radius: 5%;       /* Circular profile image */
+  margin-right: 0;
+
+  /* 3D Border with inset shadow */
+  border: 5px solid #c60606;         /* Red outer border */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(198, 6, 6, 0.8);  /* Red glow effect */
+  animation: glowAnimation 1.5s infinite alternate;  /* Pulsating glow effect */
+}
+
+/* Keyframes for glowing animation */
+@keyframes glowAnimation {
+  0% {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(198, 6, 6, 0.8); /* Red glow */
+  }
+  50% {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(198, 6, 6, 1);  /* Intensified red glow */
+  }
+  100% {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(198, 6, 6, 0.8);  /* Regular red glow */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Question Styling */
+.question-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the question in the middle */
+  z-index: 10; /* Ensures it is on top of the player and monster containers */
+}
+
 
 
 /* Section for relative positioning of elements */
 .gamebg {
-    background-image: url('../images/gameimg/greenbg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 200;
-    width: 300;
+  background-image: url('../images/gameimg/greenbg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200;
+  width: 300;
 }
 
-
-  /* ============================
-     Ground Section Styling
-     ============================ */
-
+/* Ground Section Styling */
 .ground-container {
-    position: relative;
-    width: 100%;
-    height: 40px; /* Set height of the container (flexible height) */
-  }
-  
-  .ground {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px; /* Adjust height as needed */
-    background-color: #1c1c1c; /* Darker gray/black ground color */
-    box-shadow: inset 0 -4px 12px rgba(0, 0, 0, 0.7); /* Darker inner shadow for depth */
-    border-top: 3px solid #121212; /* Darker border for more subtle edge effect */
-  }
-  
-  .ground::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.05); /* Even softer light reflection effect */
-    box-shadow: 0 0 30px rgba(255, 253, 253, 0.15); /* Faint but stronger glow for added realism */
-  }
-
-  /* ============================
-     Character Section Styling
-     ============================ */
-
-  .character {
-    position: absolute;
-    bottom: 10px; /* Ensures the character is above the platform */
-    z-index: 20;
-    animation: bobble 1s ease-in-out infinite;
-  }
-  
-  .wizard {
-    left: 5%;
-    height: 250px;
-    width: auto;
-  }
-  
-  .monster {
-    right: 5%;
-    height: 350px;
-    width: auto;
-  }
-  
-  @keyframes bobble {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-    100% { transform: translateY(0); }
-  }
-  
-  
-  
-  
-  
-    /* ============================
-     game control box Styling
-     ============================ */
-  
-
-.game-control-box {
-    background-color: #2d3748; /* Dark gray for footer */
-    padding: 1rem;
-    height: 260px;
-    width: auto;
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 40px; /* Set height of the container (flexible height) */
 }
 
-  /* ============================
-     Potion Section Styling
-     ============================ */
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px; /* Adjust height as needed */
+  background-color: #1c1c1c; /* Darker gray/black ground color */
+  box-shadow: inset 0 -4px 12px rgba(0, 0, 0, 0.7); /* Darker inner shadow for depth */
+  border-top: 3px solid #121212; /* Darker border for more subtle edge effect */
+}
 
+.ground::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05); /* Even softer light reflection effect */
+  box-shadow: 0 0 30px rgba(255, 253, 253, 0.15); /* Faint but stronger glow for added realism */
+}
+
+/* Character Section Styling */
+.character {
+  position: absolute;
+  bottom: 10px; /* Ensures the character is above the platform */
+  z-index: 20;
+  animation: bobble 1s ease-in-out infinite;
+}
+
+.wizard {
+  left: 5%;
+  height: 250px;
+  width: auto;
+}
+
+.monster {
+  right: 5%;
+  height: 350px;
+  width: auto;
+}
+
+@keyframes bobble {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+/* Game Control Box Styling */
+.game-control-box {
+  background-color: #1E273E; /* Dark gray for footer */
+  padding: 1rem;
+  height: 260px;
+  width: auto;
+}
+
+/* Potion Section Styling */
 .potion-section {
-    background-color: #1E273E; /* Light blue background */
-    padding: 1rem;
-    height: 230px;
-    width: auto;
+  background-color: #1E273E; /* Light blue background */
+  padding: 1rem;
+  height: 230px;
+  width: auto;
 }
 
 .potion-section button {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
-  /* ============================
-     Answer Section Styling
-     ============================ */
-     .number-button {
-        background-color: #00B050; /* Dark gray for footer */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 40px;
-        width: 130px;
-        position: relative;
-        color: rgb(255, 255, 255); /* Black text */
-        font-size: 1.125rem; /* 18px font size */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold; /* Bold text */
-     } 
-
-     .placeholder {
-      background-color: white; /* White background */
-      color: black; /* Black text */
-      font-size: 1.125rem; /* 18px font size */
-      font-weight: bold; /* Bold text */
-      padding: 1rem; /* Padding around the content */
-      height: 40px; /* Fixed height */
-      width: auto; /* Auto width to adjust based on content */
-      position: relative; /* Position relative for any future adjustments */
-      text-align: center; /* Center the text horizontally */
-      border: 2px solid #ccc; /* Light gray border */
-      border-radius: 8px; /* Rounded corners */
-      outline: none; /* Remove outline */
-      transition: border-color 0.3s ease; /* Smooth transition for border color */
-  }
+/* Game Control Container */
+.game-control-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally within the container */
+  align-items: center;      /* Center vertically within the container */       /* Ensure the container takes up full width */
+  background-color: #1E273E; /* Optional background color for the container */
   
-  .placeholder::placeholder {
-      color: #aaa; /* Light grey color for the placeholder text */
+}
+
+/* General Layout */
+.layout-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  gap: 15px;               /* Space between the button grid and right section */
+  height: 80%;             /* Adjust height for layout */
+  max-width: 600px;        /* Optional: max width for the layout */
+  width: 100%;             /* Allow layout to expand */
+}
+
+/* Button Grid Layout */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust width dynamically */
+  gap: 10px;  /* Adjust gap between buttons */
+  width: 100%;  /* Ensure grid takes full width */
+}
+
+/* Button Style */
+.button {
+  background-color: #00b300;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  height: 47px;
+  box-shadow: 0 4px #008000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%; /* Allow buttons to take up available width */
+}
+
+.button:active {
+  box-shadow: 0 2px #008000;
+  transform: translateY(2px);
+}
+
+/* Backspace Button Styling */
+.button.backspace {
+  background-color: #00b300;
+}
+
+/* Right Section Layout (Input and Attack Button) */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px; /* Space between the input field and attack button */
+  align-items: flex-start;
+}
+
+.input-field {
+  width: 180px;
+  padding: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #e0caff;
+  border-radius: 8px;
+  background-color: #f4f0ff;
+  color: #4a3f77;
+  transition: 0.2s ease all;
+}
+
+.input-field::placeholder {
+  color: #b6a6d6;
+}
+
+.input-field:hover {
+  border-color: #c1a4ff;
+}
+
+.input-field:focus {
+  border-color: #a374f1;
+  box-shadow: 0 0 0 3px rgba(163, 116, 241, 0.2);
+  outline: none;
+}
+
+
+
+/* Attack Button Styling */
+.attack-button {
+  background-color: #00b300;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  width: 180px;  /* Align with the input field */
+  height: 145px;
+  box-shadow: 0 4px #008000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.attack-button:active {
+  box-shadow: 0 2px #008000;
+  transform: translateY(2px);
+}
+
+
+
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .button {
+    font-size: 1.2rem;
+    width: 100px;
+    height: 45px;
   }
-  
-  .placeholder:focus {
-      border-color: #007BFF; /* Blue border when focused */
+
+  .attack-button {
+    font-size: 1.2rem;
+    width: 180px;
+    height: 140px;
   }
-  
 
-     .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
-        grid-gap: 10px; /* Space between the items */
-    }
-    
-    .col-span-1 {
-        background-color: #2d3748; /* Dark gray for footer */
-        padding: 1rem;
-        height: 40px;
-        width: auto;
-        position: relative;
-    }
-    
-    .row-span-1 {
-        grid-row: span 1; /* Spans one row */
-    }
-    
-    .row-span-2 {
-        grid-row: span 2; /* Spans two rows */
-    }
-    
-
-
-/* Chatbot Section Styling */
-.chatbot-section {
-    background-color: #1E273E; /* Light blue background */
-    padding: 1rem;
-    height: 230px;
-    width: auto;
-}
-
-.chatbot-section textarea {
+  .display {
+    font-size: 1.5rem;
     width: 100%;
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+  }
+
+  .placeholder-input {
+    width: 100px;
+    font-size: 1.2rem;
+  }
+
+  .layout-wrapper {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .layout-right {
+    align-items: center;
+  }
 }
 
-.chatbot-section button {
-    margin-top: 0.5rem;
+@media (max-width: 480px) {
+  .button {
+    font-size: 1rem;
+    width: 80px;
+    height: 40px;
+  }
+
+  .attack-button {
+    font-size: 1rem;
+    width: 150px;
+    height: 120px;
+  }
+
+  .display {
+    font-size: 1.2rem;
+  }
+
+  .placeholder-input {
+    width: 90px;
+    font-size: 1rem;
+  }
+
+  .layout-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .layout-right {
+    align-items: flex-start;
+  }
 }
-
-/* Adjust footer background color */
-
-
-/* Button styling */
-button {
-    padding: 0.75rem;
-    background-color: #48bb78;
-    color: white;
-    border-radius: 8px;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #38a169; /* Darker green on hover */
-}
-
-textarea {
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 100%;
-}
-
-input[type="text"] {
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    text-align: center;
-    width: 100%;
-}
-

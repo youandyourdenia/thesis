@@ -7,63 +7,73 @@
     <!-- Font Awesome Icons for heart and other icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   </head>
-  <body class="bg-blue-100 flex flex-col items-center justify-between min-h-screen">
+  <body>
     
-    <!-- Game container with background image -->
-    <div class="gamebg w-full flex-1 bg-cover bg-center" style="background-image: url('static/images/gameimg/greenbg.jpg');">
-        <!-- Sample Name Section (can change the name and styling here) -->
-      <div class="absolute top-4 left-4 flex items-center space-x-2">
-        <div class="bg-white p-2 rounded-lg shadow-md">
-          <p class="font-bold">
-            Sample name <!-- Change the name here -->
-          </p>
-        </div>
-        <div class="flex space-x-1">
-          <!-- Heart Icons (can change the number of hearts or colors) -->
-          <i class="fas fa-heart text-red-500"></i>
-          <i class="fas fa-heart text-red-500"></i>
-          <i class="fas fa-heart text-red-500"></i>
-          <i class="fas fa-heart text-red-500"></i>
-          <i class="fas fa-heart text-red-500"></i>
-        </div>
-      </div>
+<!-- Game container with background image -->
+<div class="gamebg w-full flex-1 bg-cover bg-center" style="background-image: url('static/images/gameimg/greenbg.jpg');">
 
-      <!-- Monster Name Section (can change the name and styling here) -->
-      <div class="absolute top-4 right-4 flex items-center space-x-2">
-        <div class="bg-white p-2 rounded-lg shadow-md">
-          <p class="font-bold">
-            Monster name <!-- Change the name here -->
-          </p>
-        </div>
-        <div class="flex space-x-1">
-          <!-- Heart Icons for Monster (can change the number of hearts or colors) -->
-          <i class="fas fa-heart text-red-500"></i>
-          <i class="fas fa-heart text-red-500"></i>
-          <i class="fas fa-heart text-red-500"></i>
-        </div>
-      </div>
 
-      <!-- Indicator dots (used for visual effects, can adjust colors and positioning) -->
-      <div class="absolute top-16 left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
-        <div class="w-4 h-4 bg-black rounded-full"></div>
-        <div class="w-4 h-4 bg-black rounded-full"></div>
-        <div class="w-4 h-4 bg-green-500 rounded-full"></div>
-        <div class="w-4 h-4 bg-black rounded-full"></div>
-        <div class="w-4 h-4 bg-red-500 rounded-full"></div>
-      </div>
+  <!-- Player Section (with Profile Image, Name, and Health Bar) -->
+<div class="flex justify-between items-center p-4 w-full relative">
 
-      <!-- Main content section with characters (you can change images and text here) -->
-      <div class="flex justify-between items-center mt-20 px-4">
-        <!-- Wizard character (change the image source here) -->
-        <img alt="Wizard character" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/raUbD71iFYq-U1Yml26Zcr8Ah8pGAFtfHBuPj5mjZ5w.jpg" width="100"/>
-        <p class="text-4xl font-bold">
-          2 + 2 = ? <!-- Change the question or the text here -->
-        </p>
-        <!-- Monster character (change the image source here) -->
-        <img alt="Monster character" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/rRqKqcirVjsHBRYUKip0Q807MQFPzmCDhnZij_5kkzQ.jpg" width="100"/>
+<!-- Player Section -->
+<div class="player-container">
+    <div class="player-section flex items-center space-x-4">
+      <img alt="Player Profile" class="player-image" 
+           src="https://storage.googleapis.com/a1aa/image/raUbD71iFYq-U1Yml26Zcr8Ah8pGAFtfHBuPj5mjZ5w.jpg" />
+  
+      <!-- Name and Health Bar Section -->
+      <div class="name-health">
+        <div class="name-box">
+          <p class="player-name">Sample name</p>
+        </div>
+        <div class="player-health-bar space-x-1">
+          <div class="health-bar">
+            <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+            <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+            <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+            <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+            <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+          </div>
+          
+        </div>
       </div>
     </div>
+  </div>
 
+  <!-- Main content section with question in the center -->
+  <div class="question-container absolute text-center">
+    <p class="text-4xl font-bold text-yellow-400">2 + 2 = ?</p>
+  </div>
+
+    <!-- Monster Section -->
+  <div class="monster-container">
+    <div class="monster-section flex items-center space-x-4">
+
+      <!-- Name and Health Bar Section -->
+      <div class="name-health">
+        <div class="name-box">
+          <p class="monster-name">Monster name</p>
+        </div>
+        <div class="monster-health-bar space-x-1">
+          <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+          <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+          <img src="{{ url_for('static', filename='images/gameimg/heart.png') }}" alt="Heart" class="heart-image" />
+          
+        </div>
+      </div>
+      <img alt="Monster Profile" class="monster-image" 
+           src="https://storage.googleapis.com/a1aa/image/rRqKqcirVjsHBRYUKip0Q807MQFPzmCDhnZij_5kkzQ.jpg" />
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+</div>
 <!-- Combined Ground and Characters Section -->
 <div class="ground-container w-full">
     <!-- Character (Wizard) on the left -->
@@ -95,46 +105,115 @@
         </div>
 
         
-        <div class="grid grid-cols-4 gap-1 p-4 bg-gray-900 rounded-lg">
-            <!-- First Row: 7, 8, 9, and Input Field -->
-            <button class="number-button">7</button>
-            <button class="number-button">8</button>
-            <button class="number-button">9</button>
-            <input type="text" class="placeholder" placeholder="Enter text">
 
+
+        
+
+        <div class="game-control-container">
           
+          <div class="layout-wrapper">
+            <!-- Number Buttons Grid -->
+            <div class="button-grid">
+              <div class="button" onclick="addToInput(7)">7</div>
+              <div class="button" onclick="addToInput(8)">8</div>
+              <div class="button" onclick="addToInput(9)">9</div>
+              <div class="button" onclick="addToInput(4)">4</div>
+              <div class="button" onclick="addToInput(5)">5</div>
+              <div class="button" onclick="addToInput(6)">6</div>
+              <div class="button" onclick="addToInput(1)">1</div>
+              <div class="button" onclick="addToInput(2)">2</div>
+              <div class="button" onclick="addToInput(3)">3</div>
+              <div class="button backspace" onclick="backspace()">⌫</div>
+              
+              <div class="button" onclick="addToInput(0)">0</div>
+              <div class="button" onclick="addToInput('.')">.</div>
+            </div>
         
-            <!-- Second Row: 4, 5, 6, and Attack Button -->
-            <button class="number-button">4</button>
-            <button class="number-button">5</button>
-            <button class="number-button">6</button>
-            <button class="attack-button text-white text-lg font-bold p-3 rounded-lg col-span-1 row-span-2">Attack</button>
-        
-            <!-- Third Row: 1, 2, 3 -->
-            <button class="number-button">1</button>
-            <button class="number-button">2</button>
-            <button class="number-button">3</button>
-        
-            <!-- Fourth Row: Backspace, 0, . -->
-            <button class="number-button text-white text-lg font-bold p-3 rounded-lg">
-                <i class="fas fa-arrow-left"></i> <!-- Example for Backspace Icon -->
-            </button>
-            <button class="number-button">0</button>
-            <button class="number-button">.</button>
+            <!-- Input and Attack Button Section -->
+            <div class="right-section">
+              <div class="placeholder-input">
+                <input 
+                  type="text" 
+                  class="input-field" 
+                  placeholder="Input number" 
+                  id="number-input"
+                />
+              </div>
+              <div class="attack-button"> Attack</div>
+            </div>
+          </div>
         </div>
-        
-  
-  
-  
+
 
         <!-- Chatbot Section -->
         <div class="chatbot-section p-4 ">
           <!-- Placeholder for chatbot interface -->
-          <textarea class="w-full p-2 rounded-lg" rows="4" placeholder="Chat with the wizard..."></textarea>
-          <button class="bg-blue-500 text-white p-2 rounded-lg mt-2 w-full">Send Message</button>
+
+          <button class="bg-blue-500 text-white p-2 rounded-lg mt-2 w-full">Send Mesage</button>
         </div>
 
       </div>
     </div>
+
+
+    <!-- JavaScript for handling button clicks and input -->
+    <script>
+      // Function to add a number or symbol to the input
+      function addToInput(value) {
+        const inputField = document.getElementById('number-input');
+        inputField.value += value;
+      }
+    
+      // Function to remove the last character or clear selected text if present
+      function backspace() {
+        const inputField = document.getElementById('number-input');
+        // If text is selected, clear the whole input; otherwise, remove the last character.
+        if (inputField.selectionStart !== inputField.selectionEnd) {
+          inputField.value = '';
+        } else {
+          inputField.value = inputField.value.slice(0, -1);
+        }
+      }
+    
+      // Event listener for keyboard input
+      document.addEventListener('keydown', function(event) {
+        const inputField = document.getElementById('number-input');
+        
+        // If the Ctrl key is pressed...
+        if (event.ctrlKey) {
+          // If it's Ctrl+A, prevent default and select all text.
+          if (event.key.toLowerCase() === 'a') {
+            event.preventDefault();
+            inputField.select();
+          }
+          // For any other Ctrl combination, let the event pass through.
+          return;
+        }
+        
+        // Optional: Ignore the event if it's a key repeat.
+        if (event.repeat) return;
+        
+        // Check for backspace key and handle it.
+        if (event.key === 'Backspace') {
+          event.preventDefault();
+          backspace();
+          return;
+        }
+        
+        // Process only single-character keys (ignore modifier keys, etc.)
+        if (event.key.length === 1) {
+          // Allow only numbers (0–9) and the period.
+          if ((event.key >= '0' && event.key <= '9') || event.key === '.') {
+            event.preventDefault();
+            addToInput(event.key);
+          } else {
+            // For letters or any other character, block the input.
+            event.preventDefault();
+          }
+        }
+      });
+    </script>
+
+
   </body>
 </html>
