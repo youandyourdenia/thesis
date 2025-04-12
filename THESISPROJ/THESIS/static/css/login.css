@@ -1,131 +1,223 @@
-/* Load custom font */
-@font-face {
-    font-family: 'Squeid Gameis';
-    src: url('../fonts/SqueidGameisRegular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Apply a background image to the body */
-body {
-    background-size: cover;
-    font-family: 'Comic Sans MS', 'Arial', sans-serif, 'Squeid Gameis', cursive;
-
-}
-.login-text {
-    font-size: 5rem;
-    font-weight: normal;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Squeid Gameis';
-    letter-spacing: 5px; 
-}
-.wood-card {
-    position: absolute;
-    top: 170px;
-    width: 50vh;
-    height: auto;
-}
-
-
-
-/* Styles for the login card */
-.login-card {
-    padding: 60px;
-    width: 120%;
-    min-width: 450px;
-    height: auto;
-    text-align: center;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-
-/* Styles for the content inside the login card */
-.login-content {
-    padding: 30px;
-    width: 100%;
-    max-width: 400px;
-}
-
-/* Fancy input styles for kids */
-.kid-input {
-    background-color: #ffffff;
-    border: 2px solid #D97706;
-    padding: 12px 16px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #5B3A29;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    display: block;
-    margin-top: 0.25rem;
-    transition: all 0.3s ease;
-}
-
-.kid-input::placeholder {
-    color: #B45309;
-    font-size: 1.1rem;
-    font-style: normal;
-}
-
-.kid-input:focus {
-    border-color: #B45309;
-    box-shadow: 0 0 12px rgba(234, 179, 8, 0.6);
-    outline: none;
-}
-
-/* Checkbox styling */
-form input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-/* Submit button styling */
-button[type="submit"] {
-    background-color: #4CAF50;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 1rem;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-    transform: scale(1.02);
-}
-
-/* Links styling */
-a {
-    text-decoration: none;
-    color: #6a5acd;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #4b0082;
-}
-
-/* Responsive layout */
-@media (max-width: 768px) {
-    .login-card {
-        padding: 20px;
-        max-width: 90%;
+    /* Reset default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .login-content {
-        padding: 20px;
+    /* Set full-screen background */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('../images/login.JPG'); /* Background image for the login page */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height - Adjust this if needed */
+        margin: 0;
+    }
+
+    /* Styling for the login container */
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height - Adjust this to change container height */
         width: 100%;
     }
+
+    /* Styling for the login card */
+    .login-card {
+        background-image: url('../images/wood.png'); /* Wooden background */
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 40px;
+        width: 100%;
+        max-width: 500px; /* Max width of the card - Adjust if needed */
+        min-width: 350px; /* Min width of the card - Adjust if needed */
+        height: 550px; /* Height of the login card - Adjust this for overall height */
+        max-height: 600px; /* Max height of the card - Adjust if needed */
+        text-align: center;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensures content is centered horizontally */
+        justify-content: center; /* Ensures content is centered vertically */
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    /* Hover effect for the login card (dim the background when hovered) */
+    .login-card:hover {
+        transform: scale(1.02); /* Slightly enlarge the card */
+    }
+
+    /* Header for the login card */
+    .login-card h2 {
+        font-size: 2.8em;
+        margin-top: -50px;
+        padding: 35px; /* Padding around the header - Adjust this for vertical spacing */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+
+    /* Form group to align labels and inputs */
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensures labels stay centered */
+        width: 100%;
+        margin-bottom: 0; /* Removed negative margin */
+    }
+
+    /* Specific styles for username and password input fields */
+    .login-card input.form-control {
+        width: 130%; /* Make input fields flexible */
+        max-width: 300px; /* Adjust max width of the input fields */
+        padding: 10px; /* Adjusted padding for better size */
+        font-size: 14px;
+        font-weight: bold; /* bold font weight */
+        border-radius: 8px;
+        border: 2px solid #C2A78B; /* Border color */
+        background-color: #F7F0E3; /* Background color */
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 15px; /* Reduced space between fields */
+        margin-left: 0; /* Aligns input fields with labels */
+        margin-right: 0; /* Ensure no extra right margin */
+    }
+
+    /* Adjust margin for the username input field */
+    .login-card input#username.form-control {
+        margin-top: -1px; /* Space between username label and username input */
+        margin-bottom: 10px; /* Increased space between username and password input */
+    }
+
+    /* Adjust margin for the password input field */
+    .login-card input#password.form-control {
+        margin-top: -1px; /* Space between password label and password input */
+        margin-bottom: 10px; /* Adjust space below the password field */
+    }
+
+    /* Input focus effect */
+    .login-card input.form-control:focus {
+        border-color: #4A2A1C; /* Darker border when focused */
+        outline: none;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        color: #333; /* Change text color when typing */
+
+    }
+
+    /* Placeholder initial styling */
+    .login-card input.form-control::placeholder {
+        color: #9C9C9C; /* Semi-dim color */
+        text-align: left; /* Placeholder text aligned to the left */
+        transition: all 0.3s ease-in-out; /* Smooth transition */
+        opacity: 1; /* Fully visible initially */
+        font-size: 12px; /* Default placeholder size */
+        font-weight: bold; /* bold font weight */
+    }
+
+    /* When the input field is focused, change placeholder size and color */
+    .login-card input.form-control:focus::placeholder,
+    .login-card input.form-control:not(:placeholder-shown)::placeholder {
+        font-size: 10px; /* Slightly smaller font size for the placeholder text */
+        color: #4A2A1C; /* Darker color for the placeholder when focused */
+        opacity: 0.8; /* Slightly transparent */
+        font-weight: bold; /* Bold font weight when focused */
+    }
+/* Stay signed in container */
+.stay-signed-in {
+    display: flex;
+    align-items: center; /* Aligns checkbox and label vertically */
+    justify-content: flex-start; /* Aligns them to the left */
+    width: 100%;
+    max-width: 300px; /* Match input field width */
+    margin-top: 2px; /* Adjust spacing above */
+    margin-left: -16px; /* Moves it slightly more to the left */
+    margin-bottom: 18px; /* Adjust space between Stay signed in and Forgot Password link */
+
 }
+
+/* Space between checkbox and label text */
+.stay-signed-in input[type="checkbox"] {
+    margin-right: 6px; /* Adds a small space between checkbox and text */
+}
+
+/* Label styling */
+.stay-signed-in label {
+    font-size: 14px; /* Adjust font size */
+    color: white; /* Text color */
+}
+
+
+/* Styling for Forget Password link */
+.forgot-password {
+    color: white; /* Adjust color */
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-top: 15px; /* Adjust space from the elements above */
+    display: inline-block; /* Makes the link behave like a block element */
+}
+
+/* Hover effect for the Forget Password link */
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+
+
+.btn {
+    padding: 15px 30px; /* Adjust padding for better button size */
+    background-color: #388E3C; /* Semi-dark green background color */
+    color: white;
+    text-decoration: none;
+    border: none; /* Ensure no border is present */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-flex; /* Flexbox for text centering */
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    position: relative; /* Relative position for placement */
+    width: 100%;
+    max-width: 200px; /* Button width */
+    height: 100%;
+    max-height: 50px; /* Button width */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Hover effect for the login button */
+.btn:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    color: #fff; /* Ensure text remains white on hover */
+}
+
+
+
+
+
+/* Styling for Create Account link */
+.create-account {
+    font-size: 14px; /* Increase font size for better visibility */
+    text-align: center; /* Center the text */
+}
+
+/* Styling for the link */
+.create-account a {
+    color: #F0E68C; /* Light khaki color for better contrast with brown wood */
+    text-decoration: none;
+    font-weight: bold; /* Bold font for emphasis */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for Create Account link */
+.create-account a:hover {
+    text-decoration: underline; /* Underline the link on hover */
+    color: #D2B48C; /* Tan color on hover for a subtle contrast */
+}
+

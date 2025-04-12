@@ -3,50 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Sign in</h2>
+            <form action="{{ url_for('login') }}" method="POST">
+                <!-- Username field -->
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="USERNAME" required>
+                </div>
 
-<body class="flex items-center justify-center min-h-screen bg-cover bg-center" style="background-image: url('/static/images/login.jpg');">
-    <img src="{{ url_for('static', filename='images/wood.png') }}" 
-     alt="wood" 
-     class="wood-card">
+                <!-- Password field -->
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="PASSWORD" required>
+                </div>
 
-    <div class="login-card">
-        <div class="login-content">
-            <div class="text-center mb-6">
-                <h1 class="login-text">LOG IN</h1>
-            </div>
-            <form action="#" method="POST">
-                <div class="mb-4">
-                    <input type="text" id="username" name="username" placeholder="🧙 Enter your username" class="kid-input">
+                <!-- Stay signed in checkbox -->
+                <div class="stay-signed-in">
+                    <input type="checkbox" id="stay-signed-in" name="stay-signed-in">
+                    <label for="stay-signed-in">Stay signed in</label>
                 </div>
-                <div class="mb-4">
-                    <input type="password" id="password" name="password" placeholder="🔒 Enter your password" class="kid-input">
-                </div>
-                
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center">
-                        <input id="stay-signed-in" name="stay-signed-in" type="checkbox" class="h-4 w-4 ml-3 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                        <label for="stay-signed-in" class="ml-2 block text-sm text-white">Stay signed in</label>
-                    </div>
-                </div>
-                <div>
-                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                        Login
-                    </button>
-                </div>
-                <div class="mt-4 text-center">
-                    <a href="#" class="text-sm text-white hover:text-purple-500">Forgot Password?</a>
-                </div>
-                <div class="mt-4 text-center">
-                    <span class="text-sm text-white -mt-3 block">Don't have an account? <a href="{{ url_for('register') }}" class="text-sm text-black hover:text-purple-500">Create Account</a></span>
-                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="btn btn-primary">Login</button>
+
+                <!-- Forgot Password Link -->
+                <a href="#" class="forgot-password">Forgot Password?</a><br><br>
             </form>
+
+            <hr>
+
+            <!-- Create Account Section -->
+            <p class="create-account">Don't have an account? <a href="{{ url_for('register') }}">Create Account</a></p>
         </div>
     </div>
 </body>
-
 </html>
