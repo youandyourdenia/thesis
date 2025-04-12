@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import mysql.connector
+import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'  # change this later
@@ -89,10 +90,75 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
+
 @app.route('/game')
 @login_required
 def game():
-    return render_template('game.html')
+    # Get current difficulty
+    cursor.execute("SELECT current_difficulty FROM user_progress WHERE user_id = %s", (current_user.id,))
+    row = cursor.fetchone()
+
+    # If new player, add to progress
+    if not row:
+        cursor.execute("INSERT INTO user_progress (user_id) VALUES (%s)", (current_user.id,))
+        db.commit()
+        difficulty = 'easy'
+    else:
+        difficulty = row['current_difficulty']
+
+    # Fetch a random question from that difficulty
+    cursor.execute("SELECT * FROM questions WHERE difficulty = %s", (difficulty,))
+    questions = cursor.fetchall()
+    question = random.choice(questions) if questions else None
+
+    return render_template('game.html', question=question)
+
+@app.route('/submit-answer', methods=['POST'])
+@login_required
+def submit_answer():
+    user_answer = request.form['answer']
+    question_id = request.form['question_id']
+
+    # Get the correct answer from DB
+    cursor.execute("SELECT * FROM questions WHERE id = %s", (question_id,))
+    question = cursor.fetchone()
+
+    is_correct = user_answer.strip() == question['correct_answer'].strip()
+
+    # Update progress based on answer
+    if is_correct:
+        cursor.execute("""
+            UPDATE user_progress 
+            SET correct_answers = correct_answers + 1 
+            WHERE user_id = %s
+        """, (current_user.id,))
+    else:
+        cursor.execute("""
+            UPDATE user_progress 
+            SET wrong_answers = wrong_answers + 1 
+            WHERE user_id = %s
+        """, (current_user.id,))
+    
+    # Fetch current stats
+    cursor.execute("SELECT correct_answers, wrong_answers FROM user_progress WHERE user_id = %s", (current_user.id,))
+    stats = cursor.fetchone()
+    total = stats['correct_answers'] + stats['wrong_answers']
+    accuracy = stats['correct_answers'] / total if total > 0 else 0
+
+    # Adjust difficulty
+    if accuracy >= 0.8:
+        new_diff = 'hard'
+    elif accuracy >= 0.5:
+        new_diff = 'medium'
+    else:
+        new_diff = 'easy'
+
+    cursor.execute("UPDATE user_progress SET current_difficulty = %s WHERE user_id = %s", (new_diff, current_user.id))
+    db.commit()
+
+    return redirect(url_for('game'))
+
+
 
 
 if __name__ == '__main__':
