@@ -15,7 +15,7 @@ login_manager.login_view = 'login'
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="qweqwe",  # change this to your actual MySQL password
+    password="qweqwe", 
     database="learning_game"
 )
 cursor = db.cursor(dictionary=True)
