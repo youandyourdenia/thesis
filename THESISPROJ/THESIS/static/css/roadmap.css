@@ -1,0 +1,101 @@
+/* Reset body and center the card */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1E273E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Roadmap card container */
+.roadmap-card {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+
+/* Background image stretched inside the card */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+}
+
+/* All cutout images layered above */
+.cutout-image {
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.cutout-image:hover {
+    transform: scale(1.1);
+}
+
+.addition-town {
+    top: 200px;
+    left: 1603px;
+    width: 195px;
+    height: 120px;
+}
+
+
+.comparison-cliffs {
+    top: 264px;
+    left: 1062px;
+    width: 296px;
+    height: 104px;
+}
+
+.place-value-village {
+    top: 708px;
+    left: 723px;
+    width: 238px;
+    height: auto;
+}
+
+.multiplication-oasis {
+    top: 744px;
+    left: 1089px;
+    width: 280px;
+    height: 110px;
+}
+
+
+.division-river {
+    top: 559px;
+    left: 1634px;
+    width: 236px;
+    height: 120px;
+}
+
+.roman-ruins {
+    top: 412px;
+    left: 686px;
+    width: 200px;
+    height: auto;
+}
+
+.subtraction-desert {
+    top: 737px;
+    left: 116px;
+    width: 210px;
+    height: 99px;
+}
+
+.skip-counting-springs {
+    top: 459px;
+    left: 60px;
+    width: 255px;
+    height: 90px;
+}

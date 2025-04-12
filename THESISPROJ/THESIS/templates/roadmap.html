@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roadmap.css') }}">
+    <title>Background and Cutout Image with Clickable Areas</title>
+</head>
+<body>
+
+    <!-- Background container with stretched image -->
+    <div class="background-container">
+        <img class="background-image" src="{{ url_for('static', filename='images/gameimg/roadmap/roadmap.png') }}" alt="Roadmap Background">
+
+        <!-- Cutout clickable images -->
+        <img class="cutout-image addition-town" src="{{ url_for('static', filename='images/gameimg/roadmap/addition town.png') }}" alt="addition-town" usemap="#image-map" />
+        <img class="cutout-image comparison-cliffs" src="{{ url_for('static', filename='images/gameimg/roadmap/comparison cliffs.png') }}" alt="comparison-cliffs" usemap="#image-map" />
+        <img class="cutout-image place-value-village" src="{{ url_for('static', filename='images/gameimg/roadmap/place value village.png') }}" alt="place-value-village" usemap="#image-map" />
+        <img class="cutout-image multiplication-oasis" src="{{ url_for('static', filename='images/gameimg/roadmap/multiplication oasis.png') }}" alt="multiplication-oasis" usemap="#image-map" />
+        <img class="cutout-image division-river" src="{{ url_for('static', filename='images/gameimg/roadmap/division river.png') }}" alt="division-river" usemap="#image-map" />
+        <img class="cutout-image roman-ruins" src="{{ url_for('static', filename='images/gameimg/roadmap/roman ruins.png') }}" alt="roman-ruins" usemap="#image-map" />
+        <img class="cutout-image subtraction-desert" src="{{ url_for('static', filename='images/gameimg/roadmap/subtraction desert.png') }}" alt="subtraction-dessert" usemap="#image-map" />
+        <img class="cutout-image skip-counting-springs" src="{{ url_for('static', filename='images/gameimg/roadmap/skip counting springs.png') }}" alt="skip-counting-springs" usemap="#image-map" />
+    </div>
+
+</body>
+</html>
