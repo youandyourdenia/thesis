@@ -4,26 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
-    <h2>Register</h2>
-    <form action="{{ url_for('register') }}" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+    <div class="login-container">
+        <div class="login-card">
+            <form action="{{ url_for('register') }}" method="POST">
+                <!-- Username -->
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="USERNAME" required>
+                </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+                <!-- First Name -->
+                <div class="form-group">
+                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="FIRST NAME" required>
+                </div>
 
-        <button type="submit">Register</button>
-    </form>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul>
-                {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
+                <!-- Last Name -->
+                <div class="form-group">
+                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="LAST NAME" required>
+                </div>
+
+                <!-- Birthdate -->
+                <div class="form-group birthdate-group">
+                    <div class="birthdate-wrapper">
+                        <select id="birth_month" name="birth_month" class="form-control birth-select" required>
+                            <option value="" disabled selected>MONTH</option>
+                            {% for month in ['January','February','March','April','May','June','July','August','September','October','November','December'] %}
+                                <option value="{{ month }}">{{ month }}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="birth_day" name="birth_day" class="form-control birth-select" required>
+                            <option value="" disabled selected>DAY</option>
+                            {% for day in range(1, 32) %}
+                                <option value="{{ day }}">{{ day }}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="birth_year" name="birth_year" class="form-control birth-select" required>
+                            <option value="" disabled selected>YEAR</option>
+                            {% for year in range(2005, 2026) %}
+                                <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group gender-group">
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Male" required>
+                        <span>Male</span>
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Female" required>
+                        <span>Female</span>
+                    </label>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="NEW PASSWORD" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="CONFIRM PASSWORD" required>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul>
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <hr>
+
+            <!-- Link to login -->
+            <p class="create-account">Already have an account? <a href="{{ url_for('login') }}">Sign in</a></p>
+        </div>
+    </div>
 </body>
 </html>

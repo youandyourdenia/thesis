@@ -66,11 +66,22 @@ box-sizing: border-box;
 .player-name {
   font-size: 1.7rem;
   font-weight: normal;
-  position: absolute;   /* Absolute positioning inside the container */
-  top: 25px;            /* Adjust top position (change based on your design) */
-  left: 120px;          /* Adjust left position (change based on your design) */
-  color: #ffffff;       /* Dark gray color */
+  position: absolute;
+  top: 25px;
+  left: 120px;
+  color: #ffffff;
+
+  /* Stroke effect using text-shadow */
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+
+  /* Font style */
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
+
 /* Health Bar Styles */
 .player-health-bar {
   display: flex;

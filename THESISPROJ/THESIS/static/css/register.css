@@ -1,0 +1,200 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../images/login.JPG'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Register form container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Styling for the register card */
+.login-card {
+    background-image: url('../images/wood.png'); /* Wooden background */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px;
+    max-width: 500px;
+    min-width: 350px;
+    height: 1350px; /* Increased height */
+    text-align: center;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+/* Hover effect for the register card */
+.login-card:hover {
+    transform: scale(1.02); /* Slightly enlarge the card */
+}
+
+/* Header styling */
+.login-card h2 {
+    font-size: 2.8em;
+    margin-top: -216px;
+    padding: 63px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Input field styling */
+.login-card input.form-control {
+    width: 130%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #C2A78B;
+    background-color: #F7F0E3;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Focus effect for input fields */
+.login-card input.form-control:focus {
+    border-color: #4A2A1C;
+    outline: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    color: #333;
+}
+
+/* Placeholder text styling */
+.login-card input.form-control::placeholder {
+    color: #9C9C9C;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Gender section styling */
+.gender-group {
+    display: flex; /* Ensures horizontal layout */
+    flex-direction: row; /* Explicitly set horizontal direction */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Vertically align the buttons */
+    gap: 20px; /* Space between the buttons */
+    margin-bottom: 15px;
+    width: 100%; /* Ensure it takes up full width */
+    padding: 0; /* Reset padding */
+}
+
+.gender-option {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between the radio button and the label */
+    font-weight: bold;
+    padding: 0; /* Reset padding */
+}
+
+.gender-option input[type="radio"] {
+    transform: scale(1.2); /* Increase size of the radio button */
+    accent-color: #388E3C; /* Green accent color for the radio button */
+    cursor: pointer;
+    margin: 0; /* Remove any unwanted margin */
+}
+
+/* Birthdate section styling */
+.birthdate-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.birth-select {
+    max-width: 90px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #C2A78B;
+    background-color: #F7F0E3;
+    text-align: center;
+}
+
+/* Button styling */
+.btn {
+    padding: 15px 30px;
+    background-color: #388E3C;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for the register button */
+.btn:hover {
+    transform: scale(1.05);
+    color: #fff;
+}
+
+/* Create account link styling */
+.create-account {
+    font-size: 14px;
+    text-align: center;
+}
+
+.create-account a {
+    color: #F0E68C;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+    color: #D2B48C;
+}
