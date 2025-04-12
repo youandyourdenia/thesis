@@ -1,200 +1,227 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Load custom font */
+@font-face {
+    font-family: 'Squeid Gameis';
+    src: url('../fonts/SqueidGameisRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* Body and general container */
+/* Apply a background image to the body */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('../images/login.JPG'); /* Background image */
+    background-image: url('../images/login.jpg'); /* Update with your image path */
     background-size: cover;
     background-position: center;
-    color: white;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif, 'Squeid Gameis', cursive;
     margin: 0;
-}
-
-/* Register form container */
-.login-container {
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
 }
 
-/* Styling for the register card */
-.login-card {
-    background-image: url('../images/wood.png'); /* Wooden background */
-    background-size: contain;
+/* Style for wood card background */
+.wood-card {
+    background-image: url('../images/wood.png');
+    background-size: contain; /* Ensures the whole image fits inside */
     background-position: center;
     background-repeat: no-repeat;
-    padding: 40px;
-    max-width: 500px;
-    min-width: 350px;
-    height: 1350px; /* Increased height */
-    text-align: center;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-
-/* Hover effect for the register card */
-.login-card:hover {
-    transform: scale(1.02); /* Slightly enlarge the card */
-}
-
-/* Header styling */
-.login-card h2 {
-    font-size: 2.8em;
-    margin-top: -216px;
-    padding: 63px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-}
-
-/* Form group styling */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-}
-
-/* Input field styling */
-.login-card input.form-control {
-    width: 130%;
-    max-width: 300px;
     padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 8px;
-    border: 2px solid #C2A78B;
-    background-color: #F7F0E3;
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 15px;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100%; /* Increases the width of the container */
+    height: 100%; /* Adjust as necessary to increase the height */
+    max-width: 600px;
 }
 
-/* Focus effect for input fields */
-.login-card input.form-control:focus {
-    border-color: #4A2A1C;
-    outline: none;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    color: #333;
+
+.register-content {
+    margin-top: 70px;  /* Moves the content upwards */
+    padding-top: 5px;  /* Adjusts the space at the top of the content */
+    width: 100%;
+    text-align: center;
+}
+/* Register card style */
+.register-card {
+    text-align: center;
+    padding: 50px;
+    
 }
 
-/* Placeholder text styling */
-.login-card input.form-control::placeholder {
-    color: #9C9C9C;
-    text-align: left;
-    font-size: 12px;
-    font-weight: bold;
+/* Register title */
+.register-text {
+    font-size: 5rem;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Squeid Gameis';
+    letter-spacing: 5px;
 }
 
-/* Gender section styling */
-.gender-group {
-    display: flex; /* Ensures horizontal layout */
-    flex-direction: row; /* Explicitly set horizontal direction */
-    justify-content: center; /* Center the buttons horizontally */
-    align-items: center; /* Vertically align the buttons */
-    gap: 20px; /* Space between the buttons */
-    margin-bottom: 15px;
-    width: 100%; /* Ensure it takes up full width */
-    padding: 0; /* Reset padding */
+/* Form input styling */
+.form-control {
+    background-color: #ffffff;
+    border: 2px solid #D97706;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #5B3A29;
+    height: 40px;
+    width: 90%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif, 'Squeid Gameis', cursive;
+
 }
 
-.gender-option {
-    font-size: 14px;
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}
+
+/* Birthdate group styling */
+.birthdate-group {
+    margin-top: 20px;
+    font-size: 0.85rem; /* Make the font smaller */
+}
+
+/* Wrapper for the selects to arrange them horizontally */
+/* Birthdate group styling */
+.birthdate-group {
+    margin-top: 2px;
+    font-size: 0.85rem;
     display: flex;
-    align-items: center;
-    gap: 5px; /* Space between the radio button and the label */
-    font-weight: bold;
-    padding: 0; /* Reset padding */
+    justify-content: center; /* Center the wrapper inside the form */
 }
 
-.gender-option input[type="radio"] {
-    transform: scale(1.2); /* Increase size of the radio button */
-    accent-color: #388E3C; /* Green accent color for the radio button */
-    cursor: pointer;
-    margin: 0; /* Remove any unwanted margin */
-}
-
-/* Birthdate section styling */
+/* Wrapper for the selects */
 .birthdate-wrapper {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    gap: 10px; /* space between day, month, year */
 }
 
+/* Smaller fixed width for each select */
 .birth-select {
-    max-width: 90px;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 8px;
-    border: 2px solid #C2A78B;
-    background-color: #F7F0E3;
+    width: 143px;
+    height: 40px;
+    padding: 3px;
+    border-radius: 12px;
+    border: 2px solid #D97706;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #5B3A29;
     text-align: center;
 }
 
-/* Button styling */
-.btn {
-    padding: 15px 30px;
-    background-color: #388E3C;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.5em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-    display: inline-flex;
+/* Gender group container */
+.gender-group {
+    display: flex;
     justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+/* Individual radio box */
+.gender-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Gender button style */
+.gender-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Style for gender options */
+.gender-option {
+    width: 170px;
+    height: 17px;
+    display: flex;
     align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    height: 100%;
-    max-height: 50px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid #D97706;
+    border-radius: 12px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5B3A29;  /* Default color */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: -10px;  /* Adjust this value to move it up */
 }
 
-/* Hover effect for the register button */
-.btn:hover {
-    transform: scale(1.05);
-    color: #fff;
+/* Hide the actual radio button but keep it working */
+.gender-option input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
 }
 
-/* Create account link styling */
+/* When the radio button is checked, highlight the entire label */
+.gender-option input[type="radio"]:checked + span {
+    background-color: #2670f8;
+    color: #ffffff;  /* Text color when selected */
+    width: 60%;
+    border-radius: 9px;
+}
+
+
+/* Password field and confirm password field */
+input[type="password"] {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif, 'Squeid Gameis', cursive;
+    margin-top: -10px;  /* Adjust the value to position it lower or higher */
+    margin-bottom: 20px;  /* Adjust the gap below the password input */
+    padding: 10px;  /* Optional: adjust padding for a better input field appearance */
+    border-radius: 12px;  /* Optional: round corners for the input */
+    border: 2px solid #D97706;  /* Optional: add border to match the theme */
+}
+
+
+
+/* Submit button styling */
+button[type="submit"] {
+    background-color: #4CAF50;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.2rem;
+    width: 90%;
+    margin-top: -10px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif, 'Squeid Gameis', cursive;
+}
+
+
+
+
+/* Link to login */
 .create-account {
-    font-size: 14px;
-    text-align: center;
+    font-size: 1rem;
+    color: #ffffff;
 }
 
 .create-account a {
-    color: #F0E68C;
+    color: #000000;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .create-account a:hover {
-    text-decoration: underline;
-    color: #D2B48C;
+    color: #4b0082;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .register-card {
+        width: 90%;
+        padding: 20px;
+    }
 }
