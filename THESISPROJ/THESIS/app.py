@@ -85,9 +85,6 @@ def dashboard():
     return render_template('dashboard.html', username=current_user.username)
 
 
-
-
-
 @app.route('/roadmap')
 @login_required
 def roadmap():
